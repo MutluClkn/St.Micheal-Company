@@ -13,7 +13,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     private let collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 140, height: 200)
+        layout.itemSize = CGSize(width: 150, height: 250)
 //        layout.minimumInteritemSpacing = 5
 //        layout.minimumLineSpacing = 18
         layout.scrollDirection = .horizontal
@@ -45,7 +45,7 @@ class CollectionViewTableViewCell: UITableViewCell {
 extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .brown
+        cell.backgroundColor = .darkGray
         return cell
     }
     

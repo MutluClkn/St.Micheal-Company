@@ -20,6 +20,7 @@
 		FA2CA8D227CA3CAF007A2D72 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8D127CA3CAF007A2D72 /* HomeViewController.swift */; };
 		FA2CA8DB27CA7465007A2D72 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8DA27CA7465007A2D72 /* CollectionViewTableViewCell.swift */; };
 		FA2CA8DD27CA8664007A2D72 /* MainHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8DC27CA8664007A2D72 /* MainHeaderUIView.swift */; };
+		FAB28CF627CB48860033C61B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB28CF527CB48860033C61B /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		FA2CA8D127CA3CAF007A2D72 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA2CA8DA27CA7465007A2D72 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		FA2CA8DC27CA8664007A2D72 /* MainHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderUIView.swift; sourceTree = "<group>"; };
+		FAB28CF527CB48860033C61B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +178,7 @@
 		FA2CA8D827CA73AB007A2D72 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FAB28CF527CB48860033C61B /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2CA8DD27CA8664007A2D72 /* MainHeaderUIView.swift in Sources */,
+				FAB28CF627CB48860033C61B /* Extensions.swift in Sources */,
 				FA2CA8D027CA3C86007A2D72 /* SearchViewController.swift in Sources */,
 				FA2CA8A127CA1F9E007A2D72 /* MainTabBarViewController.swift in Sources */,
 				FA2CA8D227CA3CAF007A2D72 /* HomeViewController.swift in Sources */,
