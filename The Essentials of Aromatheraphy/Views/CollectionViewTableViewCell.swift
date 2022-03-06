@@ -13,9 +13,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     private let collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 150, height: 250)
-//        layout.minimumInteritemSpacing = 5
-//        layout.minimumLineSpacing = 18
+        layout.itemSize = CGSize(width: 160, height: 300)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
