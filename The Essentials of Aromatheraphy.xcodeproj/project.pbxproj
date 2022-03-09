@@ -20,6 +20,7 @@
 		FA2CA8D227CA3CAF007A2D72 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8D127CA3CAF007A2D72 /* HomeViewController.swift */; };
 		FA2CA8DB27CA7465007A2D72 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8DA27CA7465007A2D72 /* CollectionViewTableViewCell.swift */; };
 		FA2CA8DD27CA8664007A2D72 /* MainHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8DC27CA8664007A2D72 /* MainHeaderUIView.swift */; };
+		FA8F8D0627D90604002D84C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F8D0527D90604002D84C6 /* AccountViewController.swift */; };
 		FAA014AA27D1438C00D2EBCB /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA014A927D1438C00D2EBCB /* APICaller.swift */; };
 		FAB28CF627CB48860033C61B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB28CF527CB48860033C61B /* Extensions.swift */; };
 		FAD8BA3227D4D0ED009C066A /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8BA3127D4D0ED009C066A /* TitleTableViewCell.swift */; };
@@ -61,6 +62,7 @@
 		FA2CA8D127CA3CAF007A2D72 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		FA2CA8DA27CA7465007A2D72 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		FA2CA8DC27CA8664007A2D72 /* MainHeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeaderUIView.swift; sourceTree = "<group>"; };
+		FA8F8D0527D90604002D84C6 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		FAA014A927D1438C00D2EBCB /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		FAB28CF527CB48860033C61B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FAD8BA3127D4D0ED009C066A /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				FA2CA8D127CA3CAF007A2D72 /* HomeViewController.swift */,
 				FA2CA8CF27CA3C86007A2D72 /* SearchViewController.swift */,
 				FA2CA8CD27CA3C5E007A2D72 /* CartViewController.swift */,
+				FA8F8D0527D90604002D84C6 /* AccountViewController.swift */,
 				FA2CA8A027CA1F9E007A2D72 /* MainTabBarViewController.swift */,
 			);
 			path = Core;
@@ -347,6 +350,7 @@
 			files = (
 				FA2CA8DD27CA8664007A2D72 /* MainHeaderUIView.swift in Sources */,
 				FAD8BA3627D4DCC8009C066A /* SearchResultsViewController.swift in Sources */,
+				FA8F8D0627D90604002D84C6 /* AccountViewController.swift in Sources */,
 				FAB28CF627CB48860033C61B /* Extensions.swift in Sources */,
 				FA2CA8D027CA3C86007A2D72 /* SearchViewController.swift in Sources */,
 				FAD8BA3227D4D0ED009C066A /* TitleTableViewCell.swift in Sources */,
@@ -527,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T8B4RZKP3U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Essentials of Aromatheraphy/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "The Essentials of Aromatheraphy";
@@ -556,7 +560,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = T8B4RZKP3U;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "The Essentials of Aromatheraphy/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "The Essentials of Aromatheraphy";

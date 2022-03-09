@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TitleTableViewCell: UITableViewCell {
+class TitleTableViewCell: UICollectionViewCell {
 
     
     //The pictures will show up at the Search Page. I will work on it later on.
@@ -21,9 +21,23 @@ class TitleTableViewCell: UITableViewCell {
         imageView.contentMode = .scaleAspectFill
         return imageView
     }()
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    
+    override init (frame: CGRect){
+        super.init(frame: frame)
         contentView.addSubview(productImageView)
+        
+        applyConstraints()
+    }
+    
+    private func applyConstraints() {
+        let productImageViewConstraints = [
+            productImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            productImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            productImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15),
+            productImageView.widthAnchor.constraint(equalToConstant: 100)
+        ]
+
+        NSLayoutConstraint.activate(productImageViewConstraints)
     }
     
     required init?(coder: NSCoder) {

@@ -18,18 +18,21 @@ class MainTabBarViewController: UITabBarController {
         let cartViewController = UINavigationController(rootViewController: CartViewController())
         let homeViewController = UINavigationController(rootViewController: HomeViewController())
         let searchViewController = UINavigationController(rootViewController: SearchViewController())
+        let accountViewController = UINavigationController(rootViewController: AccountViewController())
         
         homeViewController.tabBarItem.image = UIImage(systemName: "house")
         cartViewController.tabBarItem.image = UIImage(systemName: "cart")
         searchViewController.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        accountViewController.tabBarItem.image = UIImage(systemName: "person")
         
         homeViewController.title = "Home"
         cartViewController.title = "Cart"
         searchViewController.title = "Search"
+        accountViewController.title = "Profile"
         
         tabBar.tintColor = .label
         
-        setViewControllers([homeViewController, searchViewController, cartViewController], animated: true)
+        setViewControllers([homeViewController, accountViewController, searchViewController, cartViewController], animated: true)
     }
 }
 

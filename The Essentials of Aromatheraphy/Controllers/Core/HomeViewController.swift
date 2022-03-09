@@ -7,9 +7,18 @@
 
 import UIKit
 
+
+enum Section: Int {
+    case essentialOils = 0
+    case oilBlends = 1
+    case wellnessKits = 2
+    case bodyMind = 3
+}
+
+
 class HomeViewController: UIViewController {
     
-    let sectionTitles : [String] = ["SINGLE ESSENTIAL OILS", "WELLNESS OIL BLENDS", "PATIENT CARE & CARE-GIVERS’ KIT", "BODY & MIND WELLNESS KITS"]
+    let sectionTitles : [String] = ["ESSENTIAL OILS", "OIL BLENDS", "WELLNESS KITS", "BODY & MIND"]
     
     private let homeFeedLabel : UITableView = {
 
