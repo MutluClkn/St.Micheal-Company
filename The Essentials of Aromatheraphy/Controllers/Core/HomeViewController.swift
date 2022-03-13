@@ -43,6 +43,8 @@ class HomeViewController: UIViewController {
         homeFeedLabel.tableHeaderView = mainHeader
     }
     
+    
+    // MARK: - St. Micheal Logo on the home page
     private func configureNavBar() {
         var image = UIImage(named: "stmichealLogo")
         image = image?.withRenderingMode(.alwaysOriginal)
