@@ -54,6 +54,7 @@ class HomeViewController: UIViewController {
         homeFeedLabel.frame = view.bounds
     }
 }
+// MARK: - Home page extensions
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
