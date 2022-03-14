@@ -9,6 +9,7 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
+    
 //    private let searchTable : UITableView = {
 //        let table = UITableView()
 //        table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)

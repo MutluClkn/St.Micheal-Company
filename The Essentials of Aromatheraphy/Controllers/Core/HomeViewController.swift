@@ -49,6 +49,7 @@ class HomeViewController: UIViewController {
         var image = UIImage(named: "stmichealLogo")
         image = image?.withRenderingMode(.alwaysOriginal)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+
     }
     
     override func viewDidLayoutSubviews() {
