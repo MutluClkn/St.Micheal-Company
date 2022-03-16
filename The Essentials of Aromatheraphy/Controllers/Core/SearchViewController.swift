@@ -8,6 +8,8 @@
 import UIKit
 
 class SearchViewController: UIViewController {
+    
+    static let identifier = "searchVC"
 
     
 //    private let searchTable : UITableView = {

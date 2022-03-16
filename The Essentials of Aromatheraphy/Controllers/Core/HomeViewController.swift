@@ -72,6 +72,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
             return UITableViewCell()
         }
         
+        cell.delegate = self
         return cell
     }
     
@@ -103,4 +104,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
     
+}
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell) {
+        DispatchQueue.main.async { [weak self] in
+            let vc = ProductInfoViewController()
+            vc.configureConstraints()
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

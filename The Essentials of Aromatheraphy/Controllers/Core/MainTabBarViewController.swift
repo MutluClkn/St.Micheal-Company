@@ -8,6 +8,8 @@
 import UIKit
 
 class MainTabBarViewController: UITabBarController {
+    
+    static let identifier = "mainTabBarVC"
 
     override func viewDidLoad() {
         super.viewDidLoad()
