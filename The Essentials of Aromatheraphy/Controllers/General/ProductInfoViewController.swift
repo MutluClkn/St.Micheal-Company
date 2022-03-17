@@ -8,6 +8,28 @@
 import UIKit
 
 class ProductInfoViewController: UIViewController {
+    let scrollView = UIScrollView()
+    let contentView = UIView()
+    
+    func setupScrollView(){
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        
+        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+//        contentView.heightAnchor.constraint(equalToConstant: 2300).isActive = true
+    }
     
     private let productImage : UIImageView = {
         let image = UIImageView()
@@ -37,20 +59,30 @@ class ProductInfoViewController: UIViewController {
     
     private let addToCartButton : UIButton = {
         let button = UIButton()
-        button.backgroundColor = .white
+        button.backgroundColor = .darkText
         button.setTitle("Add to Cart", for: .normal)
-        button.setTitleColor(.darkText, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 8
         button.layer.masksToBounds = true
+        
         return button
     }()
     
-    private let productDescription : UITextView = {
-        let text = UITextView()
+    private let productDescription : UILabel = {
+        let text = UILabel()
         text.font = .systemFont(ofSize: 18, weight: .regular)
         text.translatesAutoresizingMaskIntoConstraints = false
+        text.numberOfLines = 0
+        text.sizeToFit()
         text.text = """
+Description
+Latin name: Mentha piperita
+Country of origin: USA
+Part of the plant: Leaves, stems, flowers
+Extraction method: Steam distilled
+Main biochemical components*: Menthol, menthone, isomenthone
+Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
 Description
 Latin name: Mentha piperita
 Country of origin: USA
@@ -63,58 +95,66 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
     }()
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
-        view.addSubview(productImage)
-        view.addSubview(titleLabel)
-        view.addSubview(priceLabel)
-        view.addSubview(addToCartButton)
-        view.addSubview(productDescription)
-        
+        setupScrollView()
+        //        view.addSubview(scrollView)
+        contentView.addSubview(productImage)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(priceLabel)
+        contentView.addSubview(addToCartButton)
+        contentView.addSubview(productDescription)
         configureConstraints()
     }
     
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 1500)
+        scrollView.isScrollEnabled = true
+    }
+    
+    
     func configureConstraints() {
+        
         let productImageConstraints = [
-            productImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            productImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            productImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
+            productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 400)
         ]
         
         let titleLabelConstraints = [
-        
-            titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 30),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            
+            titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100)
         ]
         
         let priceLabelConstraints = [
             
-            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
-            priceLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            priceLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
+            priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
         ]
         
         let addToCartButtonConstraints = [
             
-            addToCartButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            addToCartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            addToCartButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10),
+            addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
             addToCartButton.heightAnchor.constraint(equalToConstant: 40),
             addToCartButton.widthAnchor.constraint(equalToConstant: 120)
         ]
         
         let productDescriptionConstraints = [
             productDescription.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 30),
-            productDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            productDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            productDescription.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            productDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            productDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
         ]
         
-     
+        //        NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(productImageConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(priceLabelConstraints)
@@ -123,5 +163,4 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         
         
     }
-
 }

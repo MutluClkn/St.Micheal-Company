@@ -9,33 +9,34 @@ import UIKit
 
 class CartViewController: UIViewController {
     
+    //I am going to add 2 views. One of them will be for the image and the other one will be for other features.
+    
     // These codes are a clone of ProductInfoViewController file. Just to check for now. I will delete them later on.
     let scrollView = UIScrollView()
     let contentView = UIView()
     
-    func setupScrollView(){
-            scrollView.translatesAutoresizingMaskIntoConstraints = false
-            contentView.translatesAutoresizingMaskIntoConstraints = false
-            view.addSubview(scrollView)
-            scrollView.addSubview(contentView)
-            
-            scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-            scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-            
-            contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-            contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
-            contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-            contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        }
+    var v = 0
     
-//    private let scrollView: UIScrollView = {
-//        let scroll = UIScrollView()
-//        scroll.translatesAutoresizingMaskIntoConstraints = false
-//        return scroll
-//    }()
-
+    func setupScrollView(){
+        
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(scrollView)
+        scrollView.addSubview(contentView)
+        
+        
+        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+//        contentView.heightAnchor.constraint(equalToConstant: 2300).isActive = true
+    }
+    
     private let productImage : UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
@@ -44,9 +45,31 @@ class CartViewController: UIViewController {
         return image
     }()
     
+    private let amountLabel : UILabel = {
+       let amount = UILabel()
+        amount.text = "0"
+        amount.translatesAutoresizingMaskIntoConstraints = false
+        amount.font = .systemFont(ofSize: 25, weight: .bold)
+        amount.textColor = .darkText
+        return amount
+    }()
+    
+    private let stepper : UIStepper = {
+       let stepper = UIStepper()
+        stepper.autorepeat = true
+        stepper.isContinuous = true
+        stepper.minimumValue = 0
+        stepper.maximumValue = 30
+        stepper.translatesAutoresizingMaskIntoConstraints = false
+        stepper.value = 1
+        stepper.wraps = false
+        stepper.stepValue = 1
+        return stepper
+    }()
+    
     private let titleLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: 23, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -55,10 +78,11 @@ class CartViewController: UIViewController {
     
     private let priceLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 19, weight: .semibold)
+        label.font = .systemFont(ofSize: 25, weight: .semibold)
         label.textColor = .darkText
         label.text = "$9.99"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
         return label
     }()
     
@@ -88,76 +112,109 @@ Part of the plant: Leaves, stems, flowers
 Extraction method: Steam distilled
 Main biochemical components*: Menthol, menthone, isomenthone
 Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
+Description
+Latin name: Mentha piperita
+Country of origin: USA
+Part of the plant: Leaves, stems, flowers
+Extraction method: Steam distilled
+Main biochemical components*: Menthol, menthone, isomenthone
+Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
 """
         return text
     }()
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
+        
         setupScrollView()
-//        view.addSubview(scrollView)
+
         contentView.addSubview(productImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(addToCartButton)
         contentView.addSubview(productDescription)
+        contentView.addSubview(amountLabel)
+        contentView.addSubview(stepper)
         
         configureConstraints()
+        
+        stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
+        amountLabel.text = stepper.value.description
+        
+    }
+    
+    override func viewDidLayoutSubviews(){
+        super.viewDidLayoutSubviews()
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 1500)
+        scrollView.isScrollEnabled = true
+    }
+    
+    @objc func stepperValueChanged(_ sender: UIStepper!){
+        amountLabel.text = sender.value.description
     }
     
     func configureConstraints() {
-//        let scrollViewConstraints = [
-//            scrollView.topAnchor.constraint(equalTo: view.topAnchor),
-//            scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-//
-//        ]
         
         let productImageConstraints = [
-            productImage.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
-            productImage.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            productImage.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
+            productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 400)
         ]
         
         let titleLabelConstraints = [
-        
+            
             titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
-            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -100)
+            titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ]
         
         let priceLabelConstraints = [
             
-            priceLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
-            priceLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -30)
+            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 22),
+            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+            priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
         ]
         
         let addToCartButtonConstraints = [
             
-            addToCartButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10),
-            addToCartButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+            addToCartButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 20),
+          //  addToCartButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             addToCartButton.heightAnchor.constraint(equalToConstant: 40),
             addToCartButton.widthAnchor.constraint(equalToConstant: 120)
         ]
         
-        let productDescriptionConstraints = [
-            productDescription.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 30),
-            productDescription.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            productDescription.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+        let stepperConstraints = [
+            stepper.centerYAnchor.constraint(equalTo: amountLabel.centerYAnchor),
+            stepper.trailingAnchor.constraint(equalTo: amountLabel.leadingAnchor, constant: -15),
         ]
         
-//        NSLayoutConstraint.activate(scrollViewConstraints)
+        let amountLabelConstraints = [
+            amountLabel.centerYAnchor.constraint(equalTo: addToCartButton.centerYAnchor),
+  //          amountLabel.topAnchor.constraint(equalTo: addToCartButton.topAnchor, constant: 5),
+            amountLabel.trailingAnchor.constraint(equalTo: addToCartButton.leadingAnchor, constant: -30),
+            
+        ]
+        
+        let productDescriptionConstraints = [
+            productDescription.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 50),
+            productDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            productDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+        ]
+        
+        //        NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(productImageConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(priceLabelConstraints)
         NSLayoutConstraint.activate(addToCartButtonConstraints)
+        NSLayoutConstraint.activate(amountLabelConstraints)
+        NSLayoutConstraint.activate(stepperConstraints)
         NSLayoutConstraint.activate(productDescriptionConstraints)
         
         

@@ -9,54 +9,42 @@ import UIKit
 
 class AccountViewController: UIViewController {
     
-    //I am going to add 2 views.
-    //First includes St Micheal Logo
-    //The second includes username and password text fields, sign in button
-    
-//    private let logoView : UIView = {
-//        let view = UIView()
-//        view.translatesAutoresizingMaskIntoConstraints = false
-//       return view
-//    }()
-    
-    private let signInView : UIView = {
-       let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-
-    private let logoImage : UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "mainHeaderImage")
-     //   image.clipsToBounds = true
-  //      image.contentMode = .scaleAspectFill
-        return image
+    private let welcomeLabel : UILabel = {
+       let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .medium)
+        label.text = "Welcome"
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
     }()
     
-    private let userIDTextField : UITextField = {
-       let textField = UITextField()
-        textField.placeholder = "Username"
-        textField.font = .systemFont(ofSize: 18, weight: .regular)
-        textField.clearButtonMode = .whileEditing
-        textField.returnKeyType = .continue
-        return textField
+    private let userID : UILabel = {
+        let userID = UILabel()
+        userID.font = .systemFont(ofSize: 25, weight: .bold)
+        userID.text = "Mutlu Calkan"
+        userID.textAlignment = .center
+        userID.translatesAutoresizingMaskIntoConstraints = false
+        return userID
     }()
     
-    private let passwordTextField : UITextField = {
-       let textField = UITextField()
-        textField.placeholder = "Password"
-        textField.font = .systemFont(ofSize: 18, weight: .regular)
-        textField.clearButtonMode = .whileEditing
-        textField.returnKeyType = .done
-        textField.isSecureTextEntry = true
-        return textField
+    private let userInfoButton : UIButton = {
+       let button = UIButton()
+        button.backgroundColor = .systemGray4
+        button.setTitle("User Info", for: .normal)
+//        button.setImage(UIImage(named: "person.circle"), for: .normal)
+        button.setTitleColor(.darkText, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        return button
     }()
     
-    private let signInButton : UIButton = {
+    private let accountSettingsButton : UIButton = {
        let button = UIButton()
         button.backgroundColor = .systemGray4
         button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
-        button.setTitle("Sign In", for: .normal)
+        button.setTitle("Account Settings", for: .normal)
         button.setTitleColor(.darkText, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 5
@@ -64,79 +52,104 @@ class AccountViewController: UIViewController {
         return button
     }()
     
+    private let yourOrdersButton : UIButton = {
+       let button = UIButton()
+        button.backgroundColor = .systemGray4
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
+        button.setTitle("Your Orders", for: .normal)
+        button.setTitleColor(.darkText, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        return button
+    }()
     
+    private let signOutButton : UIButton = {
+       let button = UIButton()
+        button.backgroundColor = .systemGray4
+        button.titleLabel?.font = .systemFont(ofSize: 18, weight: .regular)
+        button.setTitle("Sign Out", for: .normal)
+        button.setTitleColor(.darkText, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        return button
+    }()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .systemBackground
-//        title = "Sign In"
-//        navigationController?.navigationBar.prefersLargeTitles = true
-//        navigationController?.navigationItem.largeTitleDisplayMode = .always
         
-        view.addSubview(signInView)
-        signInView.addSubview(logoImage)
-        signInView.addSubview(userIDTextField)
-        signInView.addSubview(passwordTextField)
-        signInView.addSubview(signInButton)
+        view.backgroundColor = .systemBackground
+        
+        title = "Account"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+        
+        view.addSubview(welcomeLabel)
+        view.addSubview(userID)
+        view.addSubview(userInfoButton)
+        view.addSubview(accountSettingsButton)
+        view.addSubview(yourOrdersButton)
+        view.addSubview(signOutButton)
         
         configureConstraints()
+        
     }
     
     func configureConstraints() {
         
-//        let logoViewConstraints = [
-//            logoView.topAnchor.constraint(equalTo: view.topAnchor),
-//            logoView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-//            logoView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-//            logoView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: view.frame.size.height / 2)
-//        ]
+        let welcomeLabelConstraints = [
+            welcomeLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+            welcomeLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            welcomeLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+    
+        ]
         
-        let signInViewConstraints = [
-            signInView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
-            signInView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            signInView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            signInView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
+        let userIDLabelConstraints = [
+            userID.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 5),
+            userID.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            userID.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+
             
         ]
         
-        let logoImageConstraints = [
-            logoImage.topAnchor.constraint(equalTo: signInView.topAnchor, constant: 50),
-            logoImage.leadingAnchor.constraint(equalTo: signInView.leadingAnchor),
-            logoImage.trailingAnchor.constraint(equalTo: signInView.trailingAnchor),
-            logoImage.heightAnchor.constraint(equalToConstant: 115)
-            
+        let userInfoButtonConstraints = [
+            userInfoButton.topAnchor.constraint(equalTo: userID.bottomAnchor, constant: 20),
+            userInfoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            userInfoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            userInfoButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
-        let userIDTFConstraints = [
-            userIDTextField.topAnchor.constraint(equalTo: logoImage.topAnchor, constant: 20),
-            userIDTextField.leadingAnchor.constraint(equalTo: signInView.leadingAnchor),
-            userIDTextField.trailingAnchor.constraint(equalTo: signInView.trailingAnchor),
-        //    userIDTextField.heightAnchor.constraint(equalToConstant: 30)
+        let accountSettingsButtonConstraints = [
+            accountSettingsButton.topAnchor.constraint(equalTo: userInfoButton.bottomAnchor, constant: 5),
+            accountSettingsButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            accountSettingsButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            accountSettingsButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
-        let passwordTFConstraints = [
-            passwordTextField.topAnchor.constraint(equalTo: userIDTextField.bottomAnchor, constant: 5),
-            passwordTextField.leadingAnchor.constraint(equalTo: signInView.leadingAnchor),
-            passwordTextField.trailingAnchor.constraint(equalTo: signInView.trailingAnchor),
-         //   passwordTextField.heightAnchor.constraint(equalToConstant: 30)
+        let yourOrdersButtonConstraints = [
+            yourOrdersButton.topAnchor.constraint(equalTo: accountSettingsButton.bottomAnchor, constant: 5),
+            yourOrdersButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            yourOrdersButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            yourOrdersButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
-        let signInButtonConstraints = [
-            signInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 10),
-            signInButton.leadingAnchor.constraint(equalTo: signInView.leadingAnchor, constant: 20),
-            signInButton.trailingAnchor.constraint(equalTo: signInView.trailingAnchor, constant: -20),
-            signInButton.heightAnchor.constraint(equalToConstant: 40)
-            
+        let signOutButtonConstraints = [
+            signOutButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            signOutButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            signOutButton.heightAnchor.constraint(equalToConstant: 40),
+            signOutButton.topAnchor.constraint(equalTo: yourOrdersButton.bottomAnchor, constant: 50)
         ]
         
-        NSLayoutConstraint.activate(signInViewConstraints)
-        NSLayoutConstraint.activate(logoImageConstraints)
-        NSLayoutConstraint.activate(userIDTFConstraints)
-        NSLayoutConstraint.activate(passwordTFConstraints)
-        NSLayoutConstraint.activate(signInButtonConstraints)
+        NSLayoutConstraint.activate(welcomeLabelConstraints)
+        NSLayoutConstraint.activate(userIDLabelConstraints)
+        NSLayoutConstraint.activate(userInfoButtonConstraints)
+        NSLayoutConstraint.activate(accountSettingsButtonConstraints)
+        NSLayoutConstraint.activate(yourOrdersButtonConstraints)
+        NSLayoutConstraint.activate(signOutButtonConstraints)
+        
     }
-    
-    
-    
+
+
 }
