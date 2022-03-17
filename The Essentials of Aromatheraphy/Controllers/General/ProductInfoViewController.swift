@@ -20,7 +20,8 @@ class ProductInfoViewController: UIViewController {
     private let titleLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.text = "Peppermint"
+        label.text = "Peppermint St. Michael & Company Essential Oil"
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
