@@ -19,13 +19,12 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     private let collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 160, height: 300)
+        layout.itemSize = CGSize(width: 150, height: 250)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(TitleTableViewCell.self, forCellWithReuseIdentifier: TitleTableViewCell.identifier)
         return collectionView
     }()
-    
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,6 +32,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
     }
     
     required init?(coder: NSCoder) {
@@ -42,6 +42,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = contentView.bounds
+        
     }
     
 }
