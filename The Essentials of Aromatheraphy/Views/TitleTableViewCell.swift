@@ -17,14 +17,14 @@ class TitleTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.image = UIImage(named: "product")
-        imageView.layer.cornerRadius = 8
+        imageView.layer.cornerRadius = 10
         imageView.layer.masksToBounds = true
         return imageView
     }()
     
     private let productLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 19, weight: .semibold)
+        label.font = .systemFont(ofSize: 19, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +33,7 @@ class TitleTableViewCell: UITableViewCell {
     
     private let priceLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.font = .systemFont(ofSize: 21, weight: .bold)
         label.textColor = .darkText
         label.text = "$9.99"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -43,16 +43,19 @@ class TitleTableViewCell: UITableViewCell {
     
     private let addToCartButton : UIButton = {
         let button = UIButton()
+        if let image = UIImage(systemName: "bag"){
+            button.setImage(image ,for: .normal)
+            button.tintColor = .white
+            button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 25), forImageIn: .normal)
+        }
         button.backgroundColor = .darkText
-        button.setTitle("Add to Cart", for: .normal)
-        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 5
+        button.layer.cornerRadius = 25
         button.layer.masksToBounds = true
         
         return button
     }()
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(productImageView)
@@ -67,29 +70,30 @@ class TitleTableViewCell: UITableViewCell {
         
         productImageView.snp.makeConstraints { make in
             make.left.equalTo(contentView)
-            make.top.equalTo(contentView).offset(2)
-            make.bottom.equalTo(contentView).offset(-2)
-            make.width.equalTo(120)
+            make.top.equalTo(contentView).offset(5)
+            make.bottom.equalTo(contentView).offset(-5)
+            make.width.equalTo(130)
             
         }
         
         productLabel.snp.makeConstraints { make in
             make.left.equalTo(productImageView.snp_rightMargin).offset(20)
-            make.top.equalTo(contentView).offset(10)
+            make.top.equalTo(contentView).offset(15)
             make.right.equalTo(contentView).offset(-20)
         }
         
         addToCartButton.snp.makeConstraints { make in
             make.bottom.equalTo(contentView).offset(-20)
             make.right.equalTo(contentView).offset(-20)
-            make.height.equalTo(30)
-            make.width.equalTo(110)
+            make.height.equalTo(50)
+            make.width.equalTo(50)
         }
         
         priceLabel.snp.makeConstraints { make in
             make.bottom.equalTo(contentView).offset(-20)
             make.left.equalTo(productImageView.snp_rightMargin).offset(20)
             make.right.equalTo(addToCartButton.snp_leftMargin).offset(-10)
+            make.centerY.equalTo(addToCartButton)
         }
         
 

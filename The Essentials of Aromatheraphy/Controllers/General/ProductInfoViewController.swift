@@ -88,14 +88,17 @@ class ProductInfoViewController: UIViewController {
     
     private let addToCartButton : UIButton = {
         let button = UIButton()
-        if let image = UIImage(systemName: "bag"){
-            button.setImage(image ,for: .normal)
-            button.tintColor = .white
-            button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 25), forImageIn: .normal)
-        }
+//        if let image = UIImage(systemName: "bag"){
+//            button.setImage(image ,for: .normal)
+//            button.tintColor = .white
+//            button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 25), forImageIn: .normal)
+//        }
+        button.setTitle("Cart", for: .normal)
+        button.tintColor = .white
         button.backgroundColor = .darkText
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 25
+//        button.layer.cornerRadius = 25
+        button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
         
         return button
@@ -201,8 +204,10 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
             addToCartButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
             //addToCartButton.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor, constant: 20),
             addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
-            addToCartButton.widthAnchor.constraint(equalToConstant: 50)
+//            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
+//            addToCartButton.widthAnchor.constraint(equalToConstant: 50)
+            addToCartButton.heightAnchor.constraint(equalToConstant: 55),
+            addToCartButton.widthAnchor.constraint(equalToConstant: 75)
         ]
         
 //        let stepperConstraints = [

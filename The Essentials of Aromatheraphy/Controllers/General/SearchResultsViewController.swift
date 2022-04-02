@@ -12,7 +12,7 @@ class SearchResultsViewController: UIViewController {
     
     private let searchResults: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3 - 10, height: 200)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3 - 10, height: 350)
         layout.minimumInteritemSpacing = 0
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
@@ -44,7 +44,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.backgroundColor = .blue
+        cell.backgroundColor = .white
         return cell
     }
 }
