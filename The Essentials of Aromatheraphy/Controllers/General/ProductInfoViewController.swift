@@ -8,8 +8,12 @@
 import UIKit
 
 class ProductInfoViewController: UIViewController {
+    
+
     let scrollView = UIScrollView()
     let contentView = UIView()
+    
+//    var v = 0
     
     func setupScrollView(){
         
@@ -39,9 +43,31 @@ class ProductInfoViewController: UIViewController {
         return image
     }()
     
+//    private let amountLabel : UILabel = {
+//       let amount = UILabel()
+//        amount.text = "1"
+//        amount.translatesAutoresizingMaskIntoConstraints = false
+//        amount.font = .systemFont(ofSize: 25, weight: .bold)
+//        amount.textColor = .darkText
+//        return amount
+//    }()
+//
+//    private let stepper : UIStepper = {
+//       let stepper = UIStepper()
+//        stepper.autorepeat = true
+//        stepper.isContinuous = true
+//        stepper.minimumValue = 0
+//        stepper.maximumValue = 30
+//        stepper.translatesAutoresizingMaskIntoConstraints = false
+//        stepper.value = 1
+//        stepper.wraps = false
+//        stepper.stepValue = 1
+//        return stepper
+//    }()
+    
     private let titleLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: 23, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -50,10 +76,11 @@ class ProductInfoViewController: UIViewController {
     
     private let priceLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 19, weight: .semibold)
+        label.font = .systemFont(ofSize: 25, weight: .semibold)
         label.textColor = .darkText
         label.text = "$9.99"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .right
         return label
     }()
     
@@ -69,6 +96,16 @@ class ProductInfoViewController: UIViewController {
         return button
     }()
     
+    private let descriptionTitle : UILabel = {
+       let label = UILabel()
+        label.font = .systemFont(ofSize: 23, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        label.text = "Description"
+        
+        return label
+    }()
+    
     private let productDescription : UILabel = {
         let text = UILabel()
         text.font = .systemFont(ofSize: 18, weight: .regular)
@@ -76,14 +113,12 @@ class ProductInfoViewController: UIViewController {
         text.numberOfLines = 0
         text.sizeToFit()
         text.text = """
-Description
 Latin name: Mentha piperita
 Country of origin: USA
 Part of the plant: Leaves, stems, flowers
 Extraction method: Steam distilled
 Main biochemical components*: Menthol, menthone, isomenthone
 Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
-Description
 Latin name: Mentha piperita
 Country of origin: USA
 Part of the plant: Leaves, stems, flowers
@@ -98,17 +133,24 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         view.backgroundColor = .systemBackground
+        
         setupScrollView()
-        //        view.addSubview(scrollView)
+
         contentView.addSubview(productImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(addToCartButton)
         contentView.addSubview(productDescription)
+        contentView.addSubview(descriptionTitle)
+//        contentView.addSubview(amountLabel)
+//        contentView.addSubview(stepper)
+        
         configureConstraints()
+        
+//        stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
+//        amountLabel.text = stepper.value.description
+        
     }
     
     override func viewDidLayoutSubviews(){
@@ -117,11 +159,14 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         scrollView.isScrollEnabled = true
     }
     
+//    @objc func stepperValueChanged(_ sender: UIStepper!){
+//        amountLabel.text = sender.value.description
+//    }
     
     func configureConstraints() {
         
         let productImageConstraints = [
-            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 50),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 400)
@@ -131,25 +176,44 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
             
             titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -100)
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ]
         
         let priceLabelConstraints = [
             
-            priceLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
+            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 22),
+            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
             priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
         ]
         
         let addToCartButtonConstraints = [
             
-            addToCartButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 10),
-            addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -10),
+            addToCartButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 20),
+          //  addToCartButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             addToCartButton.heightAnchor.constraint(equalToConstant: 40),
             addToCartButton.widthAnchor.constraint(equalToConstant: 120)
         ]
         
+//        let stepperConstraints = [
+//            stepper.centerYAnchor.constraint(equalTo: amountLabel.centerYAnchor),
+//            stepper.trailingAnchor.constraint(equalTo: amountLabel.leadingAnchor, constant: -15),
+//        ]
+        
+//        let amountLabelConstraints = [
+//            amountLabel.centerYAnchor.constraint(equalTo: addToCartButton.centerYAnchor),
+//  //          amountLabel.topAnchor.constraint(equalTo: addToCartButton.topAnchor, constant: 5),
+//            amountLabel.trailingAnchor.constraint(equalTo: addToCartButton.leadingAnchor, constant: -30),
+//
+//        ]
+        
+        let descriptionTitleConstraints = [
+            descriptionTitle.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 40),
+            descriptionTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+        ]
+        
         let productDescriptionConstraints = [
-            productDescription.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 30),
+            productDescription.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 5),
             productDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             productDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
         ]
@@ -159,8 +223,25 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(priceLabelConstraints)
         NSLayoutConstraint.activate(addToCartButtonConstraints)
+//        NSLayoutConstraint.activate(amountLabelConstraints)
+//        NSLayoutConstraint.activate(stepperConstraints)
         NSLayoutConstraint.activate(productDescriptionConstraints)
+        NSLayoutConstraint.activate(descriptionTitleConstraints)
         
         
+    }
+}
+
+
+// MARK: - Close keyboard by touching anywhere
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
 }

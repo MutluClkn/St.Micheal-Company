@@ -23,11 +23,13 @@
 		FA57F2E627E251770043E11E /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57F2E527E251770043E11E /* ProductInfoViewController.swift */; };
 		FA57F2E827E25D580043E11E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA57F2E727E25D580043E11E /* Storyboard.storyboard */; };
 		FA5EB0C127E323F700FABC6F /* AccountSignedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EB0C027E323F700FABC6F /* AccountSignedIn.swift */; };
+		FA7CAD5F27F827F1009D96D6 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */; };
+		FA7CAD6227F829C6009D96D6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA7CAD6127F829C6009D96D6 /* SnapKit */; };
+		FA7CAD6427F82C4D009D96D6 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */; };
 		FA8F8D0627D90604002D84C6 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8F8D0527D90604002D84C6 /* AccountViewController.swift */; };
 		FA939F3627E3AAD100B78B80 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA939F3527E3AAD100B78B80 /* LoginScreenViewController.swift */; };
 		FAA014AA27D1438C00D2EBCB /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA014A927D1438C00D2EBCB /* APICaller.swift */; };
 		FAB28CF627CB48860033C61B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB28CF527CB48860033C61B /* Extensions.swift */; };
-		FAD8BA3227D4D0ED009C066A /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8BA3127D4D0ED009C066A /* TitleTableViewCell.swift */; };
 		FAD8BA3627D4DCC8009C066A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8BA3527D4DCC8009C066A /* SearchResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,11 +71,12 @@
 		FA57F2E527E251770043E11E /* ProductInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoViewController.swift; sourceTree = "<group>"; };
 		FA57F2E727E25D580043E11E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FA5EB0C027E323F700FABC6F /* AccountSignedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSignedIn.swift; sourceTree = "<group>"; };
+		FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
+		FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA8F8D0527D90604002D84C6 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		FA939F3527E3AAD100B78B80 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		FAA014A927D1438C00D2EBCB /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		FAB28CF527CB48860033C61B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		FAD8BA3127D4D0ED009C066A /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		FAD8BA3527D4DCC8009C066A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA7CAD6227F829C6009D96D6 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +184,8 @@
 			children = (
 				FA2CA8DA27CA7465007A2D72 /* CollectionViewTableViewCell.swift */,
 				FA2CA8DC27CA8664007A2D72 /* MainHeaderUIView.swift */,
-				FAD8BA3127D4D0ED009C066A /* TitleTableViewCell.swift */,
+				FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */,
+				FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -246,6 +251,9 @@
 			dependencies = (
 			);
 			name = "The Essentials of Aromatheraphy";
+			packageProductDependencies = (
+				FA7CAD6127F829C6009D96D6 /* SnapKit */,
+			);
 			productName = "The Essentials of Aromatheraphy";
 			productReference = FA2CA89927CA1F9E007A2D72 /* The Essentials of Aromatheraphy.app */;
 			productType = "com.apple.product-type.application";
@@ -318,6 +326,9 @@
 				Base,
 			);
 			mainGroup = FA2CA89027CA1F9E007A2D72;
+			packageReferences = (
+				FA7CAD6027F829C6009D96D6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = FA2CA89A27CA1F9E007A2D72 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -365,11 +376,12 @@
 				FAD8BA3627D4DCC8009C066A /* SearchResultsViewController.swift in Sources */,
 				FA939F3627E3AAD100B78B80 /* LoginScreenViewController.swift in Sources */,
 				FA8F8D0627D90604002D84C6 /* AccountViewController.swift in Sources */,
+				FA7CAD6427F82C4D009D96D6 /* TitleCollectionViewCell.swift in Sources */,
 				FAB28CF627CB48860033C61B /* Extensions.swift in Sources */,
 				FA2CA8D027CA3C86007A2D72 /* SearchViewController.swift in Sources */,
-				FAD8BA3227D4D0ED009C066A /* TitleTableViewCell.swift in Sources */,
 				FAA014AA27D1438C00D2EBCB /* APICaller.swift in Sources */,
 				FA2CA8A127CA1F9E007A2D72 /* MainTabBarViewController.swift in Sources */,
+				FA7CAD5F27F827F1009D96D6 /* TitleTableViewCell.swift in Sources */,
 				FA5EB0C127E323F700FABC6F /* AccountSignedIn.swift in Sources */,
 				FA2CA8D227CA3CAF007A2D72 /* HomeViewController.swift in Sources */,
 				FA2CA8DB27CA7465007A2D72 /* CollectionViewTableViewCell.swift in Sources */,
@@ -710,6 +722,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA7CAD6027F829C6009D96D6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA7CAD6127F829C6009D96D6 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA7CAD6027F829C6009D96D6 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FA2CA89127CA1F9E007A2D72 /* Project object */;
 }

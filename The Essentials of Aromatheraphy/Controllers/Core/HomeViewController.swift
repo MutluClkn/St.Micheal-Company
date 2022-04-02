@@ -41,6 +41,7 @@ class HomeViewController: UIViewController {
         
         let mainHeader = MainHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 400))
         homeFeedLabel.tableHeaderView = mainHeader
+        
     }
     
     
@@ -59,7 +60,9 @@ class HomeViewController: UIViewController {
 }
 // MARK: - Home page extensions
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return sectionTitles.count
     }
@@ -110,8 +113,8 @@ extension HomeViewController: CollectionViewTableViewCellDelegate {
     func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell) {
         DispatchQueue.main.async { [weak self] in
             let vc = ProductInfoViewController()
-            vc.configureConstraints()
             self?.navigationController?.pushViewController(vc, animated: true)
+            self?.navigationController?.navigationBar.tintColor = .darkText
         }
     }
 }
