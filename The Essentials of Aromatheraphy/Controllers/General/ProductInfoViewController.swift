@@ -69,7 +69,7 @@ class ProductInfoViewController: UIViewController {
     
     private let titleLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 23, weight: .bold)
+        label.font = .systemFont(ofSize: 20, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -78,21 +78,24 @@ class ProductInfoViewController: UIViewController {
     
     private let priceLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 25, weight: .semibold)
+        label.font = .systemFont(ofSize: 22, weight: .semibold)
         label.textColor = .darkText
         label.text = "$9.99"
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .right
+        label.textAlignment = .left
         return label
     }()
     
     private let addToCartButton : UIButton = {
         let button = UIButton()
+        if let image = UIImage(systemName: "bag"){
+            button.setImage(image ,for: .normal)
+            button.tintColor = .white
+            button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 25), forImageIn: .normal)
+        }
         button.backgroundColor = .darkText
-        button.setTitle("Add to Cart", for: .normal)
-        button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 8
+        button.layer.cornerRadius = 25
         button.layer.masksToBounds = true
         
         return button
@@ -100,7 +103,7 @@ class ProductInfoViewController: UIViewController {
     
     private let descriptionTitle : UILabel = {
        let label = UILabel()
-        label.font = .systemFont(ofSize: 23, weight: .bold)
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.text = "Description"
@@ -148,6 +151,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 //        contentView.addSubview(amountLabel)
 //        contentView.addSubview(stepper)
         
+        
         configureConstraints()
         
 //        stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
@@ -187,17 +191,18 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         let priceLabelConstraints = [
             
             priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 22),
-            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30)
+            priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            priceLabel.centerYAnchor.constraint(equalTo: addToCartButton.centerYAnchor)
         ]
         
         let addToCartButtonConstraints = [
             
-            addToCartButton.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 20),
-          //  addToCartButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            addToCartButton.heightAnchor.constraint(equalToConstant: 40),
-            addToCartButton.widthAnchor.constraint(equalToConstant: 120)
+            addToCartButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            //addToCartButton.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor, constant: 20),
+            addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
+            addToCartButton.widthAnchor.constraint(equalToConstant: 50)
         ]
         
 //        let stepperConstraints = [
@@ -213,12 +218,12 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 //        ]
         
         let descriptionTitleConstraints = [
-            descriptionTitle.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 40),
+            descriptionTitle.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 50),
             descriptionTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
         ]
         
         let productDescriptionConstraints = [
-            productDescription.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 5),
+            productDescription.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 30),
             productDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             productDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
         ]
