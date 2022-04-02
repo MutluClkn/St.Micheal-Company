@@ -14,7 +14,6 @@ class SearchViewController: UIViewController {
     
     private let searchTable : UITableView = {
         let table = UITableView()
-        //table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return table
     }()
@@ -54,7 +53,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
             return UITableViewCell()
         }

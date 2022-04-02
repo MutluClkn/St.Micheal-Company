@@ -40,6 +40,8 @@ class ProductInfoViewController: UIViewController {
         image.contentMode = .scaleAspectFill
         image.image = UIImage(named: "product")
         image.translatesAutoresizingMaskIntoConstraints = false
+//        image.layer.masksToBounds = true
+//        image.layer.cornerRadius = 20
         return image
     }()
     
@@ -170,11 +172,14 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 400)
+//            productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 35),
+//            productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -35),
+//            productImage.heightAnchor.constraint(equalToConstant: 500)
         ]
         
         let titleLabelConstraints = [
-            
             titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
+            //titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 50),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ]
@@ -240,7 +245,7 @@ extension UIViewController {
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
