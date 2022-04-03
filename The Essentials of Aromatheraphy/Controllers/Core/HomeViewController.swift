@@ -106,7 +106,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
-    
 }
 
 extension HomeViewController: CollectionViewTableViewCellDelegate {

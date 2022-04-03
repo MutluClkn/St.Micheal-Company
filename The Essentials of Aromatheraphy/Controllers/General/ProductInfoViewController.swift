@@ -175,7 +175,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
     func configureConstraints() {
         
         let productImageConstraints = [
-            productImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -27),
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 400)

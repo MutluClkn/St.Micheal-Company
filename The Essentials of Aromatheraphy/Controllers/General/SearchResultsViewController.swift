@@ -47,4 +47,15 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         cell.backgroundColor = .white
         return cell
     }
+  
+    // It has to direct user to product page once it's clicked but it is not working. I'll work on it.
+    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        collectionView.deselectItem(at: indexPath, animated: true)
+//        DispatchQueue.main.async { [weak self] in
+//            let vc = ProductInfoViewController()
+//            self?.navigationController?.pushViewController(vc, animated: true)
+//            self?.navigationController?.navigationBar.tintColor = .darkText
+//        }
+//    }
 }
