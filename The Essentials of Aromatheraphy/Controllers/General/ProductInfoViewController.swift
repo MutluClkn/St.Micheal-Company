@@ -1,15 +1,17 @@
+
+
 //
 //  ProductInfoViewController.swift
 //  The Essentials of Aromatheraphy
 //
 //  Created by Mutlu Çalkan on 16.03.2022.
 //
-
 import UIKit
 
 class ProductInfoViewController: UIViewController {
     
-
+    let products = ProductInfoBank()
+    
     let scrollView = UIScrollView()
     let contentView = UIView()
     
@@ -69,8 +71,18 @@ class ProductInfoViewController: UIViewController {
     
     private let titleLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 22, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let subLabel : UILabel = {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.textColor = .gray
+        label.text = "Essential Oil"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -79,7 +91,7 @@ class ProductInfoViewController: UIViewController {
     private let priceLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
-        label.textColor = .darkText
+        label.textColor = UIColor(hexString: "#53906C")
         label.text = "$9.99"
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
@@ -88,16 +100,10 @@ class ProductInfoViewController: UIViewController {
     
     private let addToCartButton : UIButton = {
         let button = UIButton()
-//        if let image = UIImage(systemName: "bag"){
-//            button.setImage(image ,for: .normal)
-//            button.tintColor = .white
-//            button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 25), forImageIn: .normal)
-//        }
         button.setTitle("Cart", for: .normal)
         button.tintColor = .white
-        button.backgroundColor = .darkText
+        button.backgroundColor = UIColor(hexString: "#000070")
         button.translatesAutoresizingMaskIntoConstraints = false
-//        button.layer.cornerRadius = 25
         button.layer.cornerRadius = 20
         button.layer.masksToBounds = true
         
@@ -147,6 +153,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 
         contentView.addSubview(productImage)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(subLabel)
         contentView.addSubview(priceLabel)
         contentView.addSubview(addToCartButton)
         contentView.addSubview(productDescription)
@@ -154,7 +161,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 //        contentView.addSubview(amountLabel)
 //        contentView.addSubview(stepper)
         
-        
+        productSelection()
         configureConstraints()
         
 //        stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
@@ -164,7 +171,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
     
     override func viewDidLayoutSubviews(){
         super.viewDidLayoutSubviews()
-        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 1500)
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 2000)
         scrollView.isScrollEnabled = true
     }
     
@@ -172,10 +179,18 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 //        amountLabel.text = sender.value.description
 //    }
     
+    func productSelection() {
+        titleLabel.text = products.list[0].header
+        subLabel.text = products.list[0].category
+        priceLabel.text = products.list[0].price
+        productDescription.text = products.list[0].description
+        productImage.image = UIImage(named: products.list[0].image)
+    }
+    
     func configureConstraints() {
         
         let productImageConstraints = [
-            productImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: -27),
+            productImage.topAnchor.constraint(equalTo: contentView.topAnchor),
             productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             productImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             productImage.heightAnchor.constraint(equalToConstant: 400)
@@ -185,15 +200,19 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         ]
         
         let titleLabelConstraints = [
-            titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 130),
+            titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 30),
             //titleLabel.topAnchor.constraint(equalTo: productImage.bottomAnchor, constant: 50),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ]
         
+        let subLabelConstraints = [
+            subLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
+            subLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            subLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
+        ]
+        
         let priceLabelConstraints = [
-            
-            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 22),
             priceLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             priceLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             priceLabel.centerYAnchor.constraint(equalTo: addToCartButton.centerYAnchor)
@@ -201,7 +220,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         
         let addToCartButtonConstraints = [
             
-            addToCartButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            addToCartButton.topAnchor.constraint(equalTo: subLabel.bottomAnchor, constant: 50),
             //addToCartButton.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor, constant: 20),
             addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
 //            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
@@ -236,6 +255,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         //        NSLayoutConstraint.activate(scrollViewConstraints)
         NSLayoutConstraint.activate(productImageConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
+        NSLayoutConstraint.activate(subLabelConstraints)
         NSLayoutConstraint.activate(priceLabelConstraints)
         NSLayoutConstraint.activate(addToCartButtonConstraints)
 //        NSLayoutConstraint.activate(amountLabelConstraints)

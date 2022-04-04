@@ -18,7 +18,7 @@ enum Section: Int {
 
 class HomeViewController: UIViewController {
     
-    let sectionTitles : [String] = ["ESSENTIAL OILS", "OIL BLENDS", "WELLNESS KITS", "BODY & MIND"]
+    let sectionTitles : [String] = ["PatIent Care and Care GIvers' Blend", "OIL BLENDS", "WELLNESS KITS", "BODY & MIND"]
     
     private let homeFeedLabel : UITableView = {
 
@@ -58,8 +58,8 @@ class HomeViewController: UIViewController {
         homeFeedLabel.frame = view.bounds
     }
 }
-// MARK: - Home page extensions
 
+// MARK: - Home page extensions
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     
@@ -74,7 +74,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else{
             return UITableViewCell()
         }
-        
         cell.delegate = self
         return cell
     }
@@ -89,7 +88,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         guard let header = view as? UITableViewHeaderFooterView else {return}
-        header.textLabel?.font = .systemFont(ofSize: 19, weight: .semibold)
+        header.textLabel?.font = .systemFont(ofSize: 19, weight: .bold)
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
         header.textLabel?.textColor = .darkText
         header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
@@ -97,14 +96,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sectionTitles[section]
-    }
-    
-    //Hiding navigation bar when scrolling down...
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let defaultOffset = view.safeAreaInsets.top
-        let offset = scrollView.contentOffset.y + defaultOffset
-        
-        navigationController?.navigationBar.transform = .init(translationX: 0, y: min(0, -offset))
     }
 }
 

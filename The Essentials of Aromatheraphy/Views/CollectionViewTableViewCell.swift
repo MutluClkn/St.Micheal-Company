@@ -16,11 +16,13 @@ class CollectionViewTableViewCell: UITableViewCell {
     static let identifier = "CollectionViewTableViewCell"
     
     weak var delegate : CollectionViewTableViewCellDelegate?
+    
+    private var products: [ProductInfo] = [ProductInfo]()
 
     
     private let collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 170, height: 350)
+        layout.itemSize = CGSize(width: 200, height: 300)
         layout.scrollDirection = .horizontal
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
@@ -34,6 +36,7 @@ class CollectionViewTableViewCell: UITableViewCell {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        
     }
     
     required init?(coder: NSCoder) {
@@ -44,6 +47,10 @@ class CollectionViewTableViewCell: UITableViewCell {
         super.layoutSubviews()
         collectionView.frame = contentView.bounds
         
+    }
+    
+    public func configure(with productInfo : [ProductInfo]) {
+        self.products = productInfo
     }
     
 }

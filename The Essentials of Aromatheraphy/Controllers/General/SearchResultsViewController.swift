@@ -12,10 +12,10 @@ class SearchResultsViewController: UIViewController {
     
     private let searchResults: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 3 - 10, height: 350)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 10, height: 260)
         layout.minimumInteritemSpacing = 0
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        collectionView.register(TitleCollectionViewCell.self, forCellWithReuseIdentifier: TitleCollectionViewCell.identifier)
+        collectionView.register(SearcResultsCollectionViewCell.self, forCellWithReuseIdentifier: SearcResultsCollectionViewCell.identifier)
         return collectionView
     }()
     
@@ -41,7 +41,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         return 10
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearcResultsCollectionViewCell.identifier, for: indexPath) as? SearcResultsCollectionViewCell else {
             return UICollectionViewCell()
         }
         cell.backgroundColor = .white
