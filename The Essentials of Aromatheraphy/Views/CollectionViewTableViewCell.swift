@@ -17,7 +17,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     weak var delegate : CollectionViewTableViewCellDelegate?
     
-    private var products: [ProductInfo] = [ProductInfo]()
+    private var products = ProductInfoBank.getProduct()
 
     
     private let collectionView : UICollectionView = {
@@ -49,9 +49,9 @@ class CollectionViewTableViewCell: UITableViewCell {
         
     }
     
-    public func configure(with productInfo : [ProductInfo]) {
-        self.products = productInfo
-    }
+//    public func configure(with productInfo : [ProductInfo]) {
+//        self.products = productInfo
+//    }
     
 }
 
@@ -60,11 +60,15 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else { return UICollectionViewCell() }
         cell.backgroundColor = .white
+        cell.titleLabel.text = products[indexPath.row].header
+        cell.priceLabel.text = products[indexPath.row].price
+        cell.subLabel.text = products[indexPath.row].category
+        cell.productImageView.image = UIImage(named: products[indexPath.row].image ?? "breathe_away")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return products.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

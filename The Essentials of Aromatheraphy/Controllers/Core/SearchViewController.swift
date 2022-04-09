@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     static let identifier = "searchVC"
-
+    private let products = ProductInfoBank.getProduct()
     
     private let searchTable : UITableView = {
         let table = UITableView()
@@ -49,14 +49,17 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return products.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else {
             return UITableViewCell()
         }
-
+        cell.titleLabel.text = products[indexPath.row].header
+        cell.priceLabel.text = products[indexPath.row].price
+        cell.subLabel.text = products[indexPath.row].category
+        cell.productImageView.image = UIImage(named: products[indexPath.row].image ?? "breathe_away")
         return cell
     }
     

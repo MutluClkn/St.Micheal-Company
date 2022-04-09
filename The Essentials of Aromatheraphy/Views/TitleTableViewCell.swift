@@ -13,10 +13,10 @@ class TitleTableViewCell: UITableViewCell {
     //The pictures will show up at the Search Page. I will work on it later on.
     static let identifier = "TitleTableViewCell"
     
-    let products = ProductInfoBank()
+    let products = ProductInfoBank.getProduct()
     var productsArrayIndex = 0
     
-    private let productImageView: UIImageView = {
+    let productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFill
         imageView.image = UIImage(named: "product")
@@ -25,7 +25,7 @@ class TitleTableViewCell: UITableViewCell {
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
+    let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
@@ -34,7 +34,7 @@ class TitleTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let subLabel : UILabel = {
+    let subLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .regular)
         label.textColor = .gray
@@ -44,7 +44,7 @@ class TitleTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let priceLabel : UILabel = {
+    let priceLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 21, weight: .bold)
         label.textColor = UIColor(hexString: "#53906C")
@@ -54,7 +54,7 @@ class TitleTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let addToCartButton : UIButton = {
+    let addToCartButton : UIButton = {
         let button = UIButton()
         if let image = UIImage(systemName: "bag"){
             button.setImage(image ,for: .normal)
@@ -78,10 +78,10 @@ class TitleTableViewCell: UITableViewCell {
         contentView.addSubview(addToCartButton)
         
         applyConstraints()
-        productSelection()
+        //productSelection()
     }
     
-    private func applyConstraints() {
+    func applyConstraints() {
         
         productImageView.snp.makeConstraints { make in
             make.left.equalTo(contentView)
@@ -125,13 +125,13 @@ class TitleTableViewCell: UITableViewCell {
         fatalError()
     }
     
-    func productSelection() {
-        titleLabel.text = products.list[0].header
-        priceLabel.text = products.list[0].price
-        productImageView.image = UIImage(named: products.list[0].image)
-        subLabel.text = products.list[0].category
-
-    }
+//    func productSelection() {
+//        titleLabel.text = products[0].header
+//        priceLabel.text = products[0].price
+//        productImageView.image = UIImage(named: products[0].image)
+//        subLabel.text = products[0].category
+//
+//    }
     
 }
 

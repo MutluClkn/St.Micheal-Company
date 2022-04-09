@@ -11,15 +11,15 @@ import SnapKit
 class SearcResultsCollectionViewCell: UICollectionViewCell {
     static let identifier = "SearcResultsCollectionViewCell"
     
-    let products = ProductInfoBank()
+    private let products = ProductInfoBank.getProduct()
     var productsArrayIndex = 0
     
-    private let productView: UIView = {
+    let productView: UIView = {
         let view = UIView()
         return view
     }()
     
-    private let infoView: UIView = {
+    let infoView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 20
@@ -27,7 +27,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
         return view
     }()
     
-    private let titleLabel : UILabel = {
+    let titleLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17, weight: .bold)
         label.text = "Peppermint"
@@ -36,7 +36,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let subLabel : UILabel = {
+    let subLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .gray
@@ -46,7 +46,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let priceLabel : UILabel = {
+    let priceLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18, weight: .bold)
         label.textColor = UIColor(hexString: "#53906C")
@@ -56,7 +56,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let addToCartButton : UIButton = {
+    let addToCartButton : UIButton = {
         let button = UIButton()
         if let image = UIImage(systemName: "bag"){
             button.setImage(image ,for: .normal)
@@ -70,7 +70,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
         return button
     }()
     
-    private let productImageView: UIImageView = {
+    let productImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleToFill
         imageView.image = UIImage(named: "breathe_away")
@@ -89,7 +89,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
 //        infoView.addSubview(priceLabel)
 //        infoView.addSubview(addToCartButton)
         
-        productSelection()
+        //productSelection()
     }
     
     required init?(coder: NSCoder) {
@@ -148,10 +148,10 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
         
     }
     
-    func productSelection() {
-        titleLabel.text = products.list[0].header
-  //      priceLabel.text = products.list[0].price
-        subLabel.text = products.list[0].category
-        productImageView.image = UIImage(named: products.list[0].image)
-    }
+//    func productSelection() {
+//        titleLabel.text = products[0].header
+//  //      priceLabel.text = products.list[0].price
+//        subLabel.text = products[0].category
+//        productImageView.image = UIImage(named: products[0].image)
+//    }
 }

@@ -9,6 +9,7 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
 
+    private let products = ProductInfoBank.getProduct()
     
     private let searchResults: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -38,12 +39,16 @@ class SearchResultsViewController: UIViewController {
 
 extension SearchResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return products.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearcResultsCollectionViewCell.identifier, for: indexPath) as? SearcResultsCollectionViewCell else {
             return UICollectionViewCell()
         }
+        cell.titleLabel.text = products[indexPath.row].header
+        cell.priceLabel.text = products[indexPath.row].price
+        cell.subLabel.text = products[indexPath.row].category
+        cell.productImageView.image = UIImage(named: products[indexPath.row].image ?? "breathe_away")
         cell.backgroundColor = .white
         return cell
     }

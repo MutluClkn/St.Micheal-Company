@@ -10,7 +10,7 @@ import UIKit
 
 class ProductInfoViewController: UIViewController {
     
-    let products = ProductInfoBank()
+    let products = ProductInfoBank.getProduct()
     
     let scrollView = UIScrollView()
     let contentView = UIView()
@@ -37,7 +37,7 @@ class ProductInfoViewController: UIViewController {
 //        contentView.heightAnchor.constraint(equalToConstant: 2300).isActive = true
     }
     
-    private let productImage : UIImageView = {
+     let productImage : UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.image = UIImage(named: "product")
@@ -47,7 +47,7 @@ class ProductInfoViewController: UIViewController {
         return image
     }()
     
-//    private let amountLabel : UILabel = {
+//     let amountLabel : UILabel = {
 //       let amount = UILabel()
 //        amount.text = "1"
 //        amount.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +56,7 @@ class ProductInfoViewController: UIViewController {
 //        return amount
 //    }()
 //
-//    private let stepper : UIStepper = {
+//     let stepper : UIStepper = {
 //       let stepper = UIStepper()
 //        stepper.autorepeat = true
 //        stepper.isContinuous = true
@@ -69,7 +69,7 @@ class ProductInfoViewController: UIViewController {
 //        return stepper
 //    }()
     
-    private let titleLabel : UILabel = {
+     let titleLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
@@ -78,7 +78,7 @@ class ProductInfoViewController: UIViewController {
         return label
     }()
     
-    private let subLabel : UILabel = {
+     let subLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = .gray
@@ -88,7 +88,7 @@ class ProductInfoViewController: UIViewController {
         return label
     }()
     
-    private let priceLabel : UILabel = {
+     let priceLabel : UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .semibold)
         label.textColor = UIColor(hexString: "#53906C")
@@ -98,7 +98,7 @@ class ProductInfoViewController: UIViewController {
         return label
     }()
     
-    private let addToCartButton : UIButton = {
+    let addToCartButton : UIButton = {
         let button = UIButton()
         button.setTitle("Cart", for: .normal)
         button.tintColor = .white
@@ -110,7 +110,7 @@ class ProductInfoViewController: UIViewController {
         return button
     }()
     
-    private let descriptionTitle : UILabel = {
+    let descriptionTitle : UILabel = {
        let label = UILabel()
         label.font = .systemFont(ofSize: 22, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -120,7 +120,7 @@ class ProductInfoViewController: UIViewController {
         return label
     }()
     
-    private let productDescription : UILabel = {
+    let productDescription : UILabel = {
         let text = UILabel()
         text.font = .systemFont(ofSize: 18, weight: .regular)
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -161,7 +161,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 //        contentView.addSubview(amountLabel)
 //        contentView.addSubview(stepper)
         
-        productSelection()
+       // productSelection()
         configureConstraints()
         
 //        stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
@@ -179,13 +179,13 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 //        amountLabel.text = sender.value.description
 //    }
     
-    func productSelection() {
-        titleLabel.text = products.list[0].header
-        subLabel.text = products.list[0].category
-        priceLabel.text = products.list[0].price
-        productDescription.text = products.list[0].description
-        productImage.image = UIImage(named: products.list[0].image)
-    }
+//    func productSelection() {
+//        titleLabel.text = products[0].header
+//        subLabel.text = products[0].category
+//        priceLabel.text = products[0].price
+//        productDescription.text = products[0].description
+//        productImage.image = UIImage(named: products[0].image)
+//    }
     
     func configureConstraints() {
         
@@ -268,15 +268,4 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 }
 
 
-// MARK: - Close keyboard by touching anywhere
-extension UIViewController {
-    func hideKeyboardWhenTappedAround() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
 
-    @objc func dismissKeyboard() {
-        view.endEditing(true)
-    }
-}

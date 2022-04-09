@@ -32,18 +32,18 @@ import Foundation
 //}
 
 
-class ProductInfo {
-    let description : String
-    let image : String
-    let header : String
-    let category : String
-    let price : String
+struct ProductInfo {
+    let description : String?
+    let image : String?
+    let header : String?
+    let category : String?
+    let price : String?
     
-    init(productDescription : String, selectedImageName : String, productHeader : String, productCategory : String, productPrice : String){
-        description = productDescription
-        image = selectedImageName
-        header = productHeader
-        category = productCategory
-        price = productPrice
-    }
+//    init(productDescription : String, selectedImageName : String, productHeader : String, productCategory : String, productPrice : String){
+//        description = productDescription
+//        image = selectedImageName
+//        header = productHeader
+//        category = productCategory
+//        price = productPrice
+//    }
 }

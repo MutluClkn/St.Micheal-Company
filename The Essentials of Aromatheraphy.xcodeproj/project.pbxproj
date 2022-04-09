@@ -134,17 +134,12 @@
 			isa = PBXGroup;
 			children = (
 				FA2CA8D827CA73AB007A2D72 /* Resources */,
-				FA2CA8D927CA73B2007A2D72 /* Managers */,
+				FA2CA8D727CA4AEB007A2D72 /* ViewModels */,
 				FA2CA8D527CA44B7007A2D72 /* Models */,
 				FA2CA8D627CA44BE007A2D72 /* Views */,
-				FA2CA8D727CA4AEB007A2D72 /* ViewModels */,
 				FA2CA8CC27CA3C1D007A2D72 /* Controllers */,
-				FA2CA89C27CA1F9E007A2D72 /* AppDelegate.swift */,
-				FA2CA89E27CA1F9E007A2D72 /* SceneDelegate.swift */,
-				FA2CA8A527CA1FA0007A2D72 /* Assets.xcassets */,
-				FA2CA8A727CA1FA0007A2D72 /* LaunchScreen.storyboard */,
 				FA2CA8AA27CA1FA0007A2D72 /* Info.plist */,
-				FA57F2E727E25D580043E11E /* Storyboard.storyboard */,
+				FA818690280206DB001AD4FD /* Others */,
 			);
 			path = "The Essentials of Aromatheraphy";
 			sourceTree = "<group>";
@@ -211,11 +206,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		FA2CA8D927CA73B2007A2D72 /* Managers */ = {
+		FA818690280206DB001AD4FD /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				FA57F2E727E25D580043E11E /* Storyboard.storyboard */,
+				FA2CA89C27CA1F9E007A2D72 /* AppDelegate.swift */,
+				FA2CA89E27CA1F9E007A2D72 /* SceneDelegate.swift */,
+				FA2CA8A527CA1FA0007A2D72 /* Assets.xcassets */,
+				FA2CA8A727CA1FA0007A2D72 /* LaunchScreen.storyboard */,
 			);
-			path = Managers;
+			path = Others;
 			sourceTree = "<group>";
 		};
 		FAD8BA3327D4DC77009C066A /* Core */ = {
