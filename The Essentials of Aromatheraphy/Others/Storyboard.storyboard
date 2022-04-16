@@ -44,13 +44,38 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="MAT-iV-4T3">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="menu_icon" id="g3a-q9-u1m"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="stmicheal_Logo" landscapeImage="stmichealLogo" largeContentSizeImage="stmichealLogo" id="fQg-rx-2FA"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="157.97101449275362" y="-179.46428571428569"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="sQg-bX-Aag">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uvX-Tp-17U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xJd-nD-EgB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="tsx-f9-uWe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cjg-LM-see" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-752.17391304347836" y="-179.46428571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="menu_icon" width="24" height="24"/>
+        <image name="stmichealLogo" width="311.33334350585938" height="89"/>
+        <image name="stmicheal_Logo" width="311.33334350585938" height="89"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

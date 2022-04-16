@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
     
     static let identifier = "searchVC"
-    private let products = ProductInfoBank.getProduct()
+    private let products = ProductCaller.populars()
     
     private let searchTable : UITableView = {
         let table = UITableView()
@@ -57,7 +57,6 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         cell.titleLabel.text = products[indexPath.row].header
-        cell.priceLabel.text = products[indexPath.row].price
         cell.subLabel.text = products[indexPath.row].category
         cell.productImageView.image = UIImage(named: products[indexPath.row].image ?? "breathe_away")
         return cell

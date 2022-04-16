@@ -17,7 +17,7 @@ class CollectionViewTableViewCell: UITableViewCell {
     
     weak var delegate : CollectionViewTableViewCellDelegate?
     
-    private var products = ProductInfoBank.getProduct()
+    private var products : [ProductModel] = [ProductModel]()
 
     
     private let collectionView : UICollectionView = {
@@ -49,9 +49,12 @@ class CollectionViewTableViewCell: UITableViewCell {
         
     }
     
-//    public func configure(with productInfo : [ProductInfo]) {
-//        self.products = productInfo
-//    }
+    public func configure(with productModel : [ProductModel]) {
+        self.products = productModel
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
     
 }
 
@@ -60,10 +63,11 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else { return UICollectionViewCell() }
         cell.backgroundColor = .white
-        cell.titleLabel.text = products[indexPath.row].header
-        cell.priceLabel.text = products[indexPath.row].price
-        cell.subLabel.text = products[indexPath.row].category
-        cell.productImageView.image = UIImage(named: products[indexPath.row].image ?? "breathe_away")
+
+//        guard let model = products[indexPath.row].image else { return UICollectionViewCell() }
+//        cell.configure(with: model, indexNo: indexPath.row)
+        
+        
         return cell
     }
     

@@ -11,8 +11,8 @@ import SnapKit
 class TitleCollectionViewCell: UICollectionViewCell {
     static let identifier = "TitleCollectionViewCell"
     
-    let products = ProductInfoBank.getProduct()
-    var productsArrayIndex = 0
+    private var products: [ProductModel] = [ProductModel]()
+
     
     let productView: UIView = {
         let view = UIView()
@@ -88,8 +88,6 @@ class TitleCollectionViewCell: UICollectionViewCell {
         infoView.addSubview(subLabel)
         infoView.addSubview(priceLabel)
         infoView.addSubview(addToCartButton)
-        
-       // productSelection()
     }
     
     required init?(coder: NSCoder) {
@@ -98,9 +96,18 @@ class TitleCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-     //   productView.frame = contentView.bounds
+     
         applyConstraints()
     }
+    
+    public func configure(with model: String, indexNo number: Int){
+        
+//        titleLabel.text = products[number].header
+//        priceLabel.text = products[number].price
+//        subLabel.text = products[number].category
+        productImageView.image = UIImage(named: products[number].image ?? "breathe_away")
+    }
+    
     
     func applyConstraints() {
         

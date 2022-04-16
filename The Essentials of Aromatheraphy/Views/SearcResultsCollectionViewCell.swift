@@ -11,7 +11,7 @@ import SnapKit
 class SearcResultsCollectionViewCell: UICollectionViewCell {
     static let identifier = "SearcResultsCollectionViewCell"
     
-    private let products = ProductInfoBank.getProduct()
+    private let products = ProductCaller.populars()
     var productsArrayIndex = 0
     
     let productView: UIView = {
@@ -86,10 +86,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
         productView.addSubview(productImageView)
         infoView.addSubview(titleLabel)
         infoView.addSubview(subLabel)
-//        infoView.addSubview(priceLabel)
-//        infoView.addSubview(addToCartButton)
-        
-        //productSelection()
+
     }
     
     required init?(coder: NSCoder) {
@@ -132,26 +129,7 @@ class SearcResultsCollectionViewCell: UICollectionViewCell {
             make.left.equalTo(infoView).offset(15)
             make.right.equalTo(infoView).offset(-15)
         }
-        
-//        priceLabel.snp.makeConstraints { make in
-//            make.bottom.equalTo(infoView).offset(-10)
-//            make.left.equalTo(infoView).offset(15)
-//            make.right.equalTo(addToCartButton).offset(-15)
-//
-//        }
-//
-//        addToCartButton.snp.makeConstraints { make in
-//            make.bottom.equalTo(infoView).offset(-10)
-//            make.right.equalTo(infoView).offset(-15)
-//            make.height.width.equalTo(40)
-//        }
-        
+
     }
-    
-//    func productSelection() {
-//        titleLabel.text = products[0].header
-//  //      priceLabel.text = products.list[0].price
-//        subLabel.text = products[0].category
-//        productImageView.image = UIImage(named: products[0].image)
-//    }
+
 }

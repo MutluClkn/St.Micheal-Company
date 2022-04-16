@@ -13,7 +13,8 @@ class TitleTableViewCell: UITableViewCell {
     //The pictures will show up at the Search Page. I will work on it later on.
     static let identifier = "TitleTableViewCell"
     
-    let products = ProductInfoBank.getProduct()
+    private let products : [ProductModel] = [ProductModel]()
+    
     var productsArrayIndex = 0
     
     let productImageView: UIImageView = {
@@ -44,41 +45,13 @@ class TitleTableViewCell: UITableViewCell {
         return label
     }()
     
-    let priceLabel : UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 21, weight: .bold)
-        label.textColor = UIColor(hexString: "#53906C")
-        label.text = "$9.99"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        return label
-    }()
-    
-    let addToCartButton : UIButton = {
-        let button = UIButton()
-        if let image = UIImage(systemName: "bag"){
-            button.setImage(image ,for: .normal)
-            button.tintColor = .white
-            button.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 25), forImageIn: .normal)
-        }
-        button.backgroundColor = UIColor(hexString: "#000070")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 25
-        button.layer.masksToBounds = true
-        
-        return button
-    }()
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(productImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(subLabel)
-        contentView.addSubview(priceLabel)
-        contentView.addSubview(addToCartButton)
         
         applyConstraints()
-        //productSelection()
     }
     
     func applyConstraints() {
@@ -87,7 +60,7 @@ class TitleTableViewCell: UITableViewCell {
             make.left.equalTo(contentView)
             make.top.equalTo(contentView).offset(5)
             make.bottom.equalTo(contentView).offset(-5)
-            make.width.equalTo(120)
+            make.width.equalTo(140)
             
         }
         
@@ -103,20 +76,6 @@ class TitleTableViewCell: UITableViewCell {
             make.right.equalTo(contentView).offset(-20)
         }
         
-        addToCartButton.snp.makeConstraints { make in
-            make.bottom.equalTo(contentView).offset(-20)
-            make.right.equalTo(contentView).offset(-20)
-            make.height.equalTo(50)
-            make.width.equalTo(50)
-        }
-        
-        priceLabel.snp.makeConstraints { make in
-            make.bottom.equalTo(contentView).offset(-20)
-            make.left.equalTo(productImageView.snp_rightMargin).offset(20)
-            make.right.equalTo(addToCartButton.snp_leftMargin).offset(-10)
-            make.centerY.equalTo(addToCartButton)
-        }
-        
 
 
     }
@@ -124,14 +83,7 @@ class TitleTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
-//    func productSelection() {
-//        titleLabel.text = products[0].header
-//        priceLabel.text = products[0].price
-//        productImageView.image = UIImage(named: products[0].image)
-//        subLabel.text = products[0].category
-//
-//    }
+
     
 }
 

@@ -6,26 +6,52 @@
 //
 
 import UIKit
+import SnapKit
 
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-enum Section: Int {
-    case essentialOils = 0
-    case oilBlends = 1
-    case wellnessKits = 2
-    case bodyMind = 3
-}
-
-
-class HomeViewController: UIViewController {
+    private let products = ProductCaller.populars()
     
-    let sectionTitles : [String] = ["PatIent Care and Care GIvers' Blend", "OIL BLENDS", "WELLNESS KITS", "BODY & MIND"]
+    // MARK: - Menu Button View
+    private let menuView : UIView = {
+        let view = UIView()
+        return view
+    }()
+    private let patientCareButton : UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    private let wellnessDropperButton : UIButton = {
+        let button = UIButton()
+        return button
+    }()
+    private let wellnessBlendsButton : UIButton = {
+        let button = UIButton()
+        return button
+    }()
     
-    private let homeFeedLabel : UITableView = {
-
-        let table = UITableView(frame: .zero, style: .grouped)
-        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
-        return table
+    func constraints(){
+        // View ve buttonlarin constraints lerini ayarla
+        menuView.snp.makeConstraints { make in
+            <#code#>
+        }
+        patientCareButton.snp.makeConstraints { make in
+            
+        }
         
+        wellnessDropperButton.snp.makeConstraints { make in
+            <#code#>
+        }
+        wellnessBlendsButton.snp.makeConstraints { make in
+            <#code#>
+        }
+    }
+    
+    // MARK: - Table View
+    private let homeFeedLabel : UITableView = {
+        let table = UITableView(frame: .zero, style: .grouped)
+        table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
+        return table
     }()
 
     override func viewDidLoad() {
@@ -33,6 +59,11 @@ class HomeViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         view.addSubview(homeFeedLabel)
+        view.addSubview(menuView)
+        menuView.addSubview(patientCareButton)
+        menuView.addSubview(wellnessDropperButton)
+        menuView.addSubview(wellnessBlendsButton)
+        
         
         homeFeedLabel.delegate = self
         homeFeedLabel.dataSource = self
@@ -42,48 +73,68 @@ class HomeViewController: UIViewController {
         let mainHeader = MainHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 400))
         homeFeedLabel.tableHeaderView = mainHeader
         
+        constraints()
+        
     }
     
     
     // MARK: - St. Micheal Logo on the home page
     private func configureNavBar() {
         var image = UIImage(named: "stmichealLogo")
+        let menu = UIBarButtonItem(image: UIImage(named: "menu_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(barMenu))
         image = image?.withRenderingMode(.alwaysOriginal)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
+        navigationItem.leftBarButtonItem = menu
 
     }
+
+    @objc func barMenu() {
+        DispatchQueue.main.async {
+            let patientCare = PatientCareProductsViewController()
+            self.navigationController?.pushViewController(patientCare, animated: true)
+            self.navigationController?.navigationBar.tintColor = .darkText
+        }
+    }
+
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedLabel.frame = view.bounds
     }
-}
-
-// MARK: - Home page extensions
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sectionTitles.count
+        return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else{
-            return UITableViewCell()
-        }
-        cell.delegate = self
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else{ return UITableViewCell()}
+        cell.titleLabel.text = products[indexPath.row].header
+        cell.productImageView.image = UIImage(named: products[indexPath.row].image ?? "breathe_away")
+        cell.subLabel.text = products[indexPath.row].category
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
+        return 150
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            let vc = ProductInfoViewController()
+            vc.titleLabel.text = self.products[indexPath.row].header
+            vc.subLabel.text = self.products[indexPath.row].category
+            vc.productImage.image = UIImage(named: self.products[indexPath.row].image!)
+            vc.productDescription.text = self.products[indexPath.row].description
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.navigationBar.tintColor = .darkText
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
@@ -95,16 +146,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionTitles[section]
+        return "Popular"
     }
-}
-
-extension HomeViewController: CollectionViewTableViewCellDelegate {
-    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell) {
-        DispatchQueue.main.async { [weak self] in
-            let vc = ProductInfoViewController()
-            self?.navigationController?.pushViewController(vc, animated: true)
-            self?.navigationController?.navigationBar.tintColor = .darkText
-        }
-    }
+    
 }

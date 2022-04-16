@@ -17,24 +17,20 @@ class MainTabBarViewController: UITabBarController {
         view.backgroundColor = .systemYellow
         
         //Tab bar menu...
-        let cartViewController = UINavigationController(rootViewController: CartViewController())
         let homeViewController = UINavigationController(rootViewController: HomeViewController())
         let searchViewController = UINavigationController(rootViewController: SearchViewController())
-        let accountViewController = UINavigationController(rootViewController: AccountViewController())
         
         homeViewController.tabBarItem.image = UIImage(systemName: "house")
-        cartViewController.tabBarItem.image = UIImage(systemName: "cart")
         searchViewController.tabBarItem.image = UIImage(systemName: "square.grid.2x2")
-        accountViewController.tabBarItem.image = UIImage(systemName: "person")
+
         
         homeViewController.title = "Home"
-        cartViewController.title = "Cart"
         searchViewController.title = "Explore"
-        accountViewController.title = "Profile"
+
         
         tabBar.tintColor = .label
         
-        setViewControllers([homeViewController, accountViewController, searchViewController, cartViewController], animated: true)
+        setViewControllers([homeViewController, searchViewController], animated: true)
     }
 }
 

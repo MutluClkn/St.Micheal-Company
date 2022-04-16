@@ -9,7 +9,7 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
 
-    private let products = ProductInfoBank.getProduct()
+    private let products = ProductCaller.populars()
     
     private let searchResults: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

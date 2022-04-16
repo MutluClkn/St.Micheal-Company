@@ -1,5 +1,3 @@
-
-
 //
 //  ProductInfoViewController.swift
 //  The Essentials of Aromatheraphy
@@ -9,142 +7,138 @@
 import UIKit
 
 class ProductInfoViewController: UIViewController {
-    
-    let products = ProductInfoBank.getProduct()
-    
+
     let scrollView = UIScrollView()
     let contentView = UIView()
     
-//    var v = 0
-    
     func setupScrollView(){
+         
+         scrollView.translatesAutoresizingMaskIntoConstraints = false
+         contentView.translatesAutoresizingMaskIntoConstraints = false
+         view.addSubview(scrollView)
+         scrollView.addSubview(contentView)
+         
+         
+         scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+         scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+         scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+         
+         contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
+         contentView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+ //        contentView.heightAnchor.constraint(equalToConstant: 2300).isActive = true
+     }
+    
+    let productImage : UIImageView = {
+            let image = UIImageView()
+            image.contentMode = .scaleAspectFill
+            image.image = UIImage(named: "product")
+            image.translatesAutoresizingMaskIntoConstraints = false
+    //        image.layer.masksToBounds = true
+    //        image.layer.cornerRadius = 20
+            return image
+        }()
         
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        contentView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
+    //     let amountLabel : UILabel = {
+    //       let amount = UILabel()
+    //        amount.text = "1"
+    //        amount.translatesAutoresizingMaskIntoConstraints = false
+    //        amount.font = .systemFont(ofSize: 25, weight: .bold)
+    //        amount.textColor = .darkText
+    //        return amount
+    //    }()
+    //
+    //     let stepper : UIStepper = {
+    //       let stepper = UIStepper()
+    //        stepper.autorepeat = true
+    //        stepper.isContinuous = true
+    //        stepper.minimumValue = 0
+    //        stepper.maximumValue = 30
+    //        stepper.translatesAutoresizingMaskIntoConstraints = false
+    //        stepper.value = 1
+    //        stepper.wraps = false
+    //        stepper.stepValue = 1
+    //        return stepper
+    //    }()
+        
+         let titleLabel : UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 22, weight: .bold)
+            label.text = "Peppermint St. Michael & Company Essential Oil"
+            label.numberOfLines = 0
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+        
+         let subLabel : UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 20, weight: .regular)
+            label.textColor = .gray
+            label.text = "Essential Oil"
+            label.numberOfLines = 0
+            label.translatesAutoresizingMaskIntoConstraints = false
+            return label
+        }()
+        
+         let priceLabel : UILabel = {
+            let label = UILabel()
+            label.font = .systemFont(ofSize: 22, weight: .semibold)
+             label.textColor = .white
+            label.text = "$9.99"
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textAlignment = .left
+            return label
+        }()
+        
+        let addToCartButton : UIButton = {
+            let button = UIButton()
+            button.setTitle("Cart", for: .normal)
+            button.tintColor = .white
+            button.backgroundColor = .white
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.layer.cornerRadius = 20
+            button.layer.masksToBounds = true
+            
+            return button
+        }()
+        
+        let descriptionTitle : UILabel = {
+           let label = UILabel()
+            label.font = .systemFont(ofSize: 22, weight: .bold)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.numberOfLines = 0
+            label.text = "Description"
+            
+            return label
+        }()
+        
+        let productDescription : UILabel = {
+            let text = UILabel()
+            text.font = .systemFont(ofSize: 18, weight: .regular)
+            text.translatesAutoresizingMaskIntoConstraints = false
+            text.numberOfLines = 0
+            text.sizeToFit()
+            text.text = """
+    Latin name: Mentha piperita
+    Country of origin: USA
+    Part of the plant: Leaves, stems, flowers
+    Extraction method: Steam distilled
+    Main biochemical components*: Menthol, menthone, isomenthone
+    Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
+    Latin name: Mentha piperita
+    Country of origin: USA
+    Part of the plant: Leaves, stems, flowers
+    Extraction method: Steam distilled
+    Main biochemical components*: Menthol, menthone, isomenthone
+    Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
+    """
+            return text
+        }()
         
         
-        scrollView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        scrollView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         
-        contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
-        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-//        contentView.heightAnchor.constraint(equalToConstant: 2300).isActive = true
-    }
-    
-     let productImage : UIImageView = {
-        let image = UIImageView()
-        image.contentMode = .scaleAspectFill
-        image.image = UIImage(named: "product")
-        image.translatesAutoresizingMaskIntoConstraints = false
-//        image.layer.masksToBounds = true
-//        image.layer.cornerRadius = 20
-        return image
-    }()
-    
-//     let amountLabel : UILabel = {
-//       let amount = UILabel()
-//        amount.text = "1"
-//        amount.translatesAutoresizingMaskIntoConstraints = false
-//        amount.font = .systemFont(ofSize: 25, weight: .bold)
-//        amount.textColor = .darkText
-//        return amount
-//    }()
-//
-//     let stepper : UIStepper = {
-//       let stepper = UIStepper()
-//        stepper.autorepeat = true
-//        stepper.isContinuous = true
-//        stepper.minimumValue = 0
-//        stepper.maximumValue = 30
-//        stepper.translatesAutoresizingMaskIntoConstraints = false
-//        stepper.value = 1
-//        stepper.wraps = false
-//        stepper.stepValue = 1
-//        return stepper
-//    }()
-    
-     let titleLabel : UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.text = "Peppermint St. Michael & Company Essential Oil"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-     let subLabel : UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
-        label.textColor = .gray
-        label.text = "Essential Oil"
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-     let priceLabel : UILabel = {
-        let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
-        label.textColor = UIColor(hexString: "#53906C")
-        label.text = "$9.99"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textAlignment = .left
-        return label
-    }()
-    
-    let addToCartButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("Cart", for: .normal)
-        button.tintColor = .white
-        button.backgroundColor = UIColor(hexString: "#000070")
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 20
-        button.layer.masksToBounds = true
-        
-        return button
-    }()
-    
-    let descriptionTitle : UILabel = {
-       let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 0
-        label.text = "Description"
-        
-        return label
-    }()
-    
-    let productDescription : UILabel = {
-        let text = UILabel()
-        text.font = .systemFont(ofSize: 18, weight: .regular)
-        text.translatesAutoresizingMaskIntoConstraints = false
-        text.numberOfLines = 0
-        text.sizeToFit()
-        text.text = """
-Latin name: Mentha piperita
-Country of origin: USA
-Part of the plant: Leaves, stems, flowers
-Extraction method: Steam distilled
-Main biochemical components*: Menthol, menthone, isomenthone
-Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
-Latin name: Mentha piperita
-Country of origin: USA
-Part of the plant: Leaves, stems, flowers
-Extraction method: Steam distilled
-Main biochemical components*: Menthol, menthone, isomenthone
-Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
-"""
-        return text
-    }()
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -220,7 +214,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
         
         let addToCartButtonConstraints = [
             
-            addToCartButton.topAnchor.constraint(equalTo: subLabel.bottomAnchor, constant: 50),
+            addToCartButton.topAnchor.constraint(equalTo: subLabel.bottomAnchor, constant: 30),
             //addToCartButton.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor, constant: 20),
             addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
 //            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
@@ -242,7 +236,7 @@ Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic
 //        ]
         
         let descriptionTitleConstraints = [
-            descriptionTitle.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 50),
+            descriptionTitle.topAnchor.constraint(equalTo: addToCartButton.bottomAnchor, constant: 30),
             descriptionTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
         ]
         
