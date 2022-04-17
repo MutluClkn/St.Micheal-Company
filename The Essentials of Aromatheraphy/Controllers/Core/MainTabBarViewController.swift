@@ -15,7 +15,6 @@ class MainTabBarViewController: UITabBarController {
         super.viewDidLoad()
         
         view.backgroundColor = .systemYellow
-        
         //Tab bar menu...
         let homeViewController = UINavigationController(rootViewController: HomeViewController())
         let searchViewController = UINavigationController(rootViewController: SearchViewController())
@@ -32,5 +31,6 @@ class MainTabBarViewController: UITabBarController {
         
         setViewControllers([homeViewController, searchViewController], animated: true)
     }
+
 }
 

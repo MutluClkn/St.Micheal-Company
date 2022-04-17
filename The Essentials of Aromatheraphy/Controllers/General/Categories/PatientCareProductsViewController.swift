@@ -9,7 +9,7 @@ import UIKit
 
 class PatientCareProductsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    private let products = ProductCaller.populars()
+    private let products = ProductCaller.patientCare()
     
     private let tableView : UITableView = {
         let table = UITableView(frame: .zero, style: .grouped)

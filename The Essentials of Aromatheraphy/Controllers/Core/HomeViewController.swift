@@ -12,44 +12,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     private let products = ProductCaller.populars()
     
-    // MARK: - Menu Button View
-    private let menuView : UIView = {
-        let view = UIView()
-        return view
-    }()
-    private let patientCareButton : UIButton = {
-        let button = UIButton()
-        return button
-    }()
-    private let wellnessDropperButton : UIButton = {
-        let button = UIButton()
-        return button
-    }()
-    private let wellnessBlendsButton : UIButton = {
-        let button = UIButton()
-        return button
-    }()
-    
-    func constraints(){
-        // View ve buttonlarin constraints lerini ayarla
-        menuView.snp.makeConstraints { make in
-            <#code#>
-        }
-        patientCareButton.snp.makeConstraints { make in
-            
-        }
-        
-        wellnessDropperButton.snp.makeConstraints { make in
-            <#code#>
-        }
-        wellnessBlendsButton.snp.makeConstraints { make in
-            <#code#>
-        }
-    }
-    
     // MARK: - Table View
     private let homeFeedLabel : UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped)
+        let table = UITableView(frame: .zero, style: .plain)
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return table
     }()
@@ -59,10 +24,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         view.backgroundColor = .systemBackground
         view.addSubview(homeFeedLabel)
-        view.addSubview(menuView)
-        menuView.addSubview(patientCareButton)
-        menuView.addSubview(wellnessDropperButton)
-        menuView.addSubview(wellnessBlendsButton)
+
         
         
         homeFeedLabel.delegate = self
@@ -72,8 +34,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let mainHeader = MainHeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 400))
         homeFeedLabel.tableHeaderView = mainHeader
-        
-        constraints()
+
         
     }
     
@@ -81,20 +42,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - St. Micheal Logo on the home page
     private func configureNavBar() {
         var image = UIImage(named: "stmichealLogo")
-        let menu = UIBarButtonItem(image: UIImage(named: "menu_icon")?.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(barMenu))
         image = image?.withRenderingMode(.alwaysOriginal)
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
-        navigationItem.leftBarButtonItem = menu
-
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: .done, target: self, action: nil)
     }
 
-    @objc func barMenu() {
-        DispatchQueue.main.async {
-            let patientCare = PatientCareProductsViewController()
-            self.navigationController?.pushViewController(patientCare, animated: true)
-            self.navigationController?.navigationBar.tintColor = .darkText
-        }
-    }
 
     
     override func viewDidLayoutSubviews() {
