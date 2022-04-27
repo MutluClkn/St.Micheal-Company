@@ -12,6 +12,8 @@ class SearchViewController: UIViewController {
     
     static let identifier = "searchVC"
     
+    private let products = ProductCaller.self
+    
     // Search Bar
     private let searchController : UISearchController = {
        let controller = UISearchController(searchResultsController: SearchResultsViewController())
@@ -100,6 +102,7 @@ class SearchViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
         navigationController?.navigationBar.tintColor = .darkText
         
         view.addSubview(categoriesLabel)
@@ -185,6 +188,18 @@ class SearchViewController: UIViewController {
     
 }
 
+extension SearchViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        
+        guard let query = searchBar.text,
+              !query.trimmingCharacters(in: .whitespaces).isEmpty,
+              let resultsController = searchController.searchResultsController as? SearchResultsViewController else {
+                  return
+              }
+        
+    }
+}
 
 //extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 //    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
