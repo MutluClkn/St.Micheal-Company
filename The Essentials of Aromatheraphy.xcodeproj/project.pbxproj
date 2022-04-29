@@ -26,11 +26,13 @@
 		FA2CA8DD27CA8664007A2D72 /* MainHeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CA8DC27CA8664007A2D72 /* MainHeaderUIView.swift */; };
 		FA57F2E627E251770043E11E /* ProductInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA57F2E527E251770043E11E /* ProductInfoViewController.swift */; };
 		FA57F2E827E25D580043E11E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA57F2E727E25D580043E11E /* Storyboard.storyboard */; };
+		FA5D44D5281BD60900C02CAC /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = FA5D44D4281BD60900C02CAC /* Parchment */; };
 		FA7CAD5F27F827F1009D96D6 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */; };
 		FA7CAD6227F829C6009D96D6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA7CAD6127F829C6009D96D6 /* SnapKit */; };
 		FA7CAD6427F82C4D009D96D6 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */; };
 		FAAA342A27FB45F30078CA10 /* SearcResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA342927FB45F30078CA10 /* SearcResultsCollectionViewCell.swift */; };
 		FAB28CF627CB48860033C61B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB28CF527CB48860033C61B /* Extensions.swift */; };
+		FAD54D8A281C15C4004F32B1 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD54D89281C15C4004F32B1 /* ImageItem.swift */; };
 		FAD8BA3627D4DCC8009C066A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8BA3527D4DCC8009C066A /* SearchResultsViewController.swift */; };
 		FAF3D8B927FAE54D005B94FE /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3D8B827FAE54D005B94FE /* ProductModel.swift */; };
 		FAF3D8BC27FAEECA005B94FE /* ProductCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3D8BB27FAEECA005B94FE /* ProductCaller.swift */; };
@@ -81,6 +83,7 @@
 		FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAAA342927FB45F30078CA10 /* SearcResultsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearcResultsCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAB28CF527CB48860033C61B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FAD54D89281C15C4004F32B1 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		FAD8BA3527D4DCC8009C066A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		FAF3D8B827FAE54D005B94FE /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
 		FAF3D8BB27FAEECA005B94FE /* ProductCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCaller.swift; sourceTree = "<group>"; };
@@ -92,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA7CAD6227F829C6009D96D6 /* SnapKit in Frameworks */,
+				FA5D44D5281BD60900C02CAC /* Parchment in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +191,7 @@
 		FA2CA8D527CA44B7007A2D72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FAD54D88281C15A9004F32B1 /* PagingModel */,
 				FAF3D8B827FAE54D005B94FE /* ProductModel.swift */,
 			);
 			path = Models;
@@ -232,6 +237,14 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
+		FAD54D88281C15A9004F32B1 /* PagingModel */ = {
+			isa = PBXGroup;
+			children = (
+				FAD54D89281C15C4004F32B1 /* ImageItem.swift */,
+			);
+			path = PagingModel;
+			sourceTree = "<group>";
+		};
 		FAD8BA3327D4DC77009C066A /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +283,7 @@
 			name = "The Essentials of Aromatheraphy";
 			packageProductDependencies = (
 				FA7CAD6127F829C6009D96D6 /* SnapKit */,
+				FA5D44D4281BD60900C02CAC /* Parchment */,
 			);
 			productName = "The Essentials of Aromatheraphy";
 			productReference = FA2CA89927CA1F9E007A2D72 /* The Essentials of Aromatheraphy.app */;
@@ -345,6 +359,7 @@
 			mainGroup = FA2CA89027CA1F9E007A2D72;
 			packageReferences = (
 				FA7CAD6027F829C6009D96D6 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				FA5D44D3281BD60900C02CAC /* XCRemoteSwiftPackageReference "Parchment" */,
 			);
 			productRefGroup = FA2CA89A27CA1F9E007A2D72 /* Products */;
 			projectDirPath = "";
@@ -401,6 +416,7 @@
 				FA7CAD5F27F827F1009D96D6 /* TitleTableViewCell.swift in Sources */,
 				FAAA342A27FB45F30078CA10 /* SearcResultsCollectionViewCell.swift in Sources */,
 				FA2CA8D227CA3CAF007A2D72 /* HomeViewController.swift in Sources */,
+				FAD54D8A281C15C4004F32B1 /* ImageItem.swift in Sources */,
 				FAF3D8BC27FAEECA005B94FE /* ProductCaller.swift in Sources */,
 				FA2CA8DB27CA7465007A2D72 /* CollectionViewTableViewCell.swift in Sources */,
 				FA03D724280C360200BAE72A /* EssentialOilProductViewController.swift in Sources */,
@@ -744,6 +760,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA5D44D3281BD60900C02CAC /* XCRemoteSwiftPackageReference "Parchment" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rechsteiner/Parchment";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		FA7CAD6027F829C6009D96D6 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -755,6 +779,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA5D44D4281BD60900C02CAC /* Parchment */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA5D44D3281BD60900C02CAC /* XCRemoteSwiftPackageReference "Parchment" */;
+			productName = Parchment;
+		};
 		FA7CAD6127F829C6009D96D6 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA7CAD6027F829C6009D96D6 /* XCRemoteSwiftPackageReference "SnapKit" */;

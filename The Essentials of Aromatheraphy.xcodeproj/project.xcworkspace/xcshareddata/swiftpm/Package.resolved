@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Parchment",
+        "repositoryURL": "https://github.com/rechsteiner/Parchment",
+        "state": {
+          "branch": "main",
+          "revision": "cad6924f8a292eecaedc1bdefb57006f7979b9eb",
+          "version": null
+        }
+      },
+      {
         "package": "SnapKit",
         "repositoryURL": "https://github.com/SnapKit/SnapKit.git",
         "state": {

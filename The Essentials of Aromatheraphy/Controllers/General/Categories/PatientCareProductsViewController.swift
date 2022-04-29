@@ -16,7 +16,7 @@ class PatientCareProductsViewController: UIViewController, UITableViewDelegate, 
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return table
     }()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -51,6 +51,18 @@ class PatientCareProductsViewController: UIViewController, UITableViewDelegate, 
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            let vc = ProductInfoViewController()
+            vc.titleLabel.text = self.products[indexPath.row].header
+            vc.subLabel.text = self.products[indexPath.row].category
+            vc.productImage.image = UIImage(named: self.products[indexPath.row].image!)
+            vc.productDescription.text = self.products[indexPath.row].description
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.navigationBar.tintColor = .darkText
+        }
     }
     
 }
