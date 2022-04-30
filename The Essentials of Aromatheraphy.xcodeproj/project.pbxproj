@@ -30,6 +30,10 @@
 		FA7CAD5F27F827F1009D96D6 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */; };
 		FA7CAD6227F829C6009D96D6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA7CAD6127F829C6009D96D6 /* SnapKit */; };
 		FA7CAD6427F82C4D009D96D6 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */; };
+		FAA9D7F7281D467300E3112A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D7F6281D467300E3112A /* ImageCollectionViewCell.swift */; };
+		FAA9D7F9281D475A00E3112A /* ImagePagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D7F8281D475A00E3112A /* ImagePagingCell.swift */; };
+		FAA9D7FB281D48F900E3112A /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D7FA281D48F900E3112A /* ImagePagingView.swift */; };
+		FAA9D7FD281D492100E3112A /* ImagePagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D7FC281D492100E3112A /* ImagePagingViewController.swift */; };
 		FAAA342A27FB45F30078CA10 /* SearcResultsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAA342927FB45F30078CA10 /* SearcResultsCollectionViewCell.swift */; };
 		FAB28CF627CB48860033C61B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB28CF527CB48860033C61B /* Extensions.swift */; };
 		FAD54D8A281C15C4004F32B1 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD54D89281C15C4004F32B1 /* ImageItem.swift */; };
@@ -81,6 +85,10 @@
 		FA57F2E727E25D580043E11E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAA9D7F6281D467300E3112A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAA9D7F8281D475A00E3112A /* ImagePagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCell.swift; sourceTree = "<group>"; };
+		FAA9D7FA281D48F900E3112A /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingView.swift; sourceTree = "<group>"; };
+		FAA9D7FC281D492100E3112A /* ImagePagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingViewController.swift; sourceTree = "<group>"; };
 		FAAA342927FB45F30078CA10 /* SearcResultsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearcResultsCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAB28CF527CB48860033C61B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FAD54D89281C15C4004F32B1 /* ImageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
@@ -205,6 +213,9 @@
 				FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */,
 				FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */,
 				FAAA342927FB45F30078CA10 /* SearcResultsCollectionViewCell.swift */,
+				FAA9D7F6281D467300E3112A /* ImageCollectionViewCell.swift */,
+				FAA9D7F8281D475A00E3112A /* ImagePagingCell.swift */,
+				FAA9D7FA281D48F900E3112A /* ImagePagingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -261,6 +272,7 @@
 				FA0CCB70280B14A20098C128 /* Categories */,
 				FAD8BA3527D4DCC8009C066A /* SearchResultsViewController.swift */,
 				FA57F2E527E251770043E11E /* ProductInfoViewController.swift */,
+				FAA9D7FC281D492100E3112A /* ImagePagingViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -414,12 +426,16 @@
 				FA2CA8D027CA3C86007A2D72 /* SearchViewController.swift in Sources */,
 				FA2CA8A127CA1F9E007A2D72 /* MainTabBarViewController.swift in Sources */,
 				FA7CAD5F27F827F1009D96D6 /* TitleTableViewCell.swift in Sources */,
+				FAA9D7F9281D475A00E3112A /* ImagePagingCell.swift in Sources */,
 				FAAA342A27FB45F30078CA10 /* SearcResultsCollectionViewCell.swift in Sources */,
+				FAA9D7FB281D48F900E3112A /* ImagePagingView.swift in Sources */,
 				FA2CA8D227CA3CAF007A2D72 /* HomeViewController.swift in Sources */,
+				FAA9D7F7281D467300E3112A /* ImageCollectionViewCell.swift in Sources */,
 				FAD54D8A281C15C4004F32B1 /* ImageItem.swift in Sources */,
 				FAF3D8BC27FAEECA005B94FE /* ProductCaller.swift in Sources */,
 				FA2CA8DB27CA7465007A2D72 /* CollectionViewTableViewCell.swift in Sources */,
 				FA03D724280C360200BAE72A /* EssentialOilProductViewController.swift in Sources */,
+				FAA9D7FD281D492100E3112A /* ImagePagingViewController.swift in Sources */,
 				FA03D722280C35D900BAE72A /* WellnessKitProductViewController.swift in Sources */,
 				FA2CA89D27CA1F9E007A2D72 /* AppDelegate.swift in Sources */,
 				FA2CA89F27CA1F9E007A2D72 /* SceneDelegate.swift in Sources */,

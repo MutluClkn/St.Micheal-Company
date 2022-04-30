@@ -9,9 +9,10 @@ import UIKit
 
 class SearchResultsViewController: UIViewController {
 
-    private let products = ProductCaller.populars()
+    var list : [ProductModel] = []
     
-    private let searchResults: UICollectionView = {
+    
+    public let searchResults: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width / 2 - 10, height: 260)
         layout.minimumInteritemSpacing = 0
@@ -28,6 +29,8 @@ class SearchResultsViewController: UIViewController {
         
         searchResults.dataSource = self
         searchResults.delegate = self
+        
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -37,30 +40,35 @@ class SearchResultsViewController: UIViewController {
 
 }
 
-extension SearchResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension SearchResultsViewController: UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return products.count
+        return list.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SearcResultsCollectionViewCell.identifier, for: indexPath) as? SearcResultsCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.titleLabel.text = products[indexPath.row].header
-        cell.priceLabel.text = products[indexPath.row].price
-        cell.subLabel.text = products[indexPath.row].category
-        cell.productImageView.image = UIImage(named: products[indexPath.row].image ?? "breathe_away")
+        cell.titleLabel.text = list[indexPath.row].header
+        cell.priceLabel.text = list[indexPath.row].price
+        cell.subLabel.text = list[indexPath.row].category
+        cell.productImageView.image = UIImage(named: list[indexPath.row].image ?? "breathe_away")
         cell.backgroundColor = .white
         return cell
     }
+    
   
     // It has to direct user to product page once it's clicked but it is not working. I'll work on it.
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        collectionView.deselectItem(at: indexPath, animated: true)
-//        DispatchQueue.main.async { [weak self] in
-//            let vc = ProductInfoViewController()
-//            self?.navigationController?.pushViewController(vc, animated: true)
-//            self?.navigationController?.navigationBar.tintColor = .darkText
-//        }
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        DispatchQueue.main.async { [weak self] in
+            let vc = ProductInfoViewController()
+            vc.titleLabel.text = self?.list[indexPath.row].header
+            vc.subLabel.text = self?.list[indexPath.row].category
+            vc.productImage.image = UIImage(named: (self?.list[indexPath.row].image!)!)
+            vc.productDescription.text = self?.list[indexPath.row].description
+            self?.navigationController?.pushViewController(vc, animated: true)
+            self?.navigationController?.navigationBar.tintColor = .darkText
+        }
+    }
 }

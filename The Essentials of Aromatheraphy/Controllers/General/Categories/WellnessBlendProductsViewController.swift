@@ -12,7 +12,7 @@ class WellnessBlendProductsViewController: UIViewController, UITableViewDelegate
     private let products = ProductCaller.wellnessBlend()
     
     private let tableView : UITableView = {
-        let table = UITableView(frame: .zero, style: .grouped)
+        let table = UITableView(frame: .zero, style: .plain)
         table.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
         return table
     }()
@@ -62,6 +62,22 @@ class WellnessBlendProductsViewController: UIViewController, UITableViewDelegate
             self.navigationController?.pushViewController(vc, animated: true)
             self.navigationController?.navigationBar.tintColor = .darkText
         }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return "Wellness Essential Oil Blends"
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let header = view as? UITableViewHeaderFooterView else {return}
+        header.textLabel?.font = .systemFont(ofSize: 19, weight: .bold)
+        header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
+        header.textLabel?.textColor = .darkText
+        header.textLabel?.text = header.textLabel?.text?.capitalizeFirstLetter()
     }
 
 }

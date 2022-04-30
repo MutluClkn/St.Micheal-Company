@@ -9,6 +9,12 @@ import Foundation
 
 class ProductCaller {
 
+    static func search() -> [ProductModel]{
+        let list : [ProductModel] = patientCare() + wellnessBlend() + wellnessDropper() + wellnessBlendKit() + essentialOils()
+        return list
+    }
+    
+//    static let search : [ProductModel] = patientCare() + wellnessBlend() + wellnessDropper() + wellnessBlendKit() + essentialOils()
     
     static func populars() -> [ProductModel]{
         let list = [
@@ -407,284 +413,9 @@ Aromatherapy: The use of natural, aromatic substances, known as essential oils, 
 """,
                          image: "breathe_easy",
                          header: "Breathe Easy",
-                         category: "Wellness Essential Oil Blends",
+                         category: "Wellness Essential Oil Blend",
                          price: "$0.00"),
             //1
-            ProductModel(description: """
-St. Michael & Company’s Calmness Wellness Blend provides gentle comfort and support when needed.The following essential oils are in Solace (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
-
-Ingredients
-Geranium: Immune support, stress, anxiety, mood swings, mild depression.
-Helichrysum: Muscle aches, immune support, mild depression, nervous exhaustion, shock.
-Peppermint: Respiratory congestion, muscle spasms, mental fatigue, mental fog, nervous stress, mild depression.
-Wintergreen: Muscle aches, muscle cramps, mental fog.
-Ylang Ylang Extra: Rapid breathing, tense breathing, general tension, stress, anxiety, sleeplessness, nervous tension, mild depression, anger, shock.
-
-HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
-
-For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
-"""
-                         , image: "calmness", header: "Calmness", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            //2
-            ProductModel(description: """
-Change St. Michael & Company Wellness Essential Oil Blend  promotes a sense of inner peace and acceptance in times of change. This extraordinary blend combines essential oils that calm, balance, uplift, and stabilize. Together they encourage profound feelings of comfort and well-being.
-
-Our 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of fractionated coconut oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
-
-Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
-
-METHODS OF USE
-Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
-
-INGREDIENTS
-Bergamot, FCF: Sedative. Calms yet uplifts the mind, helps balance mood swings, promotes a sense of well-being.
-Black Spruce: Immune support. Calms, grounds, and restores the mind.
-Frankincense: Immune support. Slows and deepens the breath. Calms, relaxes, and comforts the mind.
-Geranium: Circulatory tonic, general tonic, immune support. Helps balance mood swings, calms, and uplifts the mind. Promotes a sense of well-being.
-Ho Wood: Calms anxiety, tension, stress and promotes feelings of peace.
-Hyssop: Immune support. Strengthens and uplifts the mind. Promotes mental clarity and focus.
-Melissa: Nervine, sedative. Calms, comforts, and uplifts the mind. Promotes a sense of well-being.
-Myrrh: Immune support. Calms, grounds, and soothes the mind.
-Rose: Sedative. Soothes, calms, and uplifts the mind. Promotes a sense of well-being.
-Sandalwood: Sedative. Profoundly calms, relaxes, and stabilizes the mind. Promotes a sense of well-being.
-Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
-
-The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
-
-For external use only. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
-
-These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
-"""
-                         , image: "change", header: "Change", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            //3
-            ProductModel(description:
-                            """
-    St. Michael & Company’s Colds & Sinus
-
-    The following essential oils are in Colds & Sinus Blend (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
-
-    Ingredients
-
-    Grape Seed Oil
-    Lavender: Tense breathing, muscle spasms, muscle aches, headaches, itching, stress, nervous tension, anxiety, nervous exhaustion, mood swings, anger,
-    Eucalyptus, Globulus: Infections, respiratory congestion, sore throats, fevers, immune support.
-    Peppermint: Infections, respiratory congestion, fevers, muscle aches, lymphatic support, immune support.
-    Tea Tree: Infections, respiratory congestion, immune support sleeplessness.
-    HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
-
-    These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
-
-    Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
-    """
-                         , image: "cold_sinus", header: "Cold & Sinus", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //4
-            ProductModel(description: """
-            St. Michael & Company’s Energize oil blend is designed to uplift the spirits and reduce fatigue. The following essential oils are in Energize Up (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
-
-             
-
-            Ingredients
-
-            Bergamot, FCF: Immune support, mild depression, stress, anxiety, nervousness, mood swings, apathy.
-            Lavender: Stress, tense breathing, nervous tension, anxiety, nervous exhaustion, mood swings, anger.
-            Lemon: Immune support, mental fog, mental clarity, mild depression.
-            Lemongrass: Stress, anxiety, nervous exhaustion, mental fatigue, mental fog, mild depression.
-            Melissa: Rapid breathing, anxiety, mild depression, tension, fear, crisis, shock, anger.
-            Orange, Sweet: Nervous tension, mild depression, worry, mental fatigue.
-            Peppermint: Mental fatigue, mental fog, anger, nervous stress, mild depression, shock.
-
-            Methods of Use
-
-             
-
-            Diffusion: Follow diffuser manufacturer’s instructions to fill the air with therapeutic aroma.
-            Easy alternatives when you don’t have a diffuser:
-            Place 2-4 drops of essential oil on several cotton balls or tissues; place nearby or tuck into the grate of fan or air vent in your home or car.
-
-            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-             
-
-            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
-            """
-                         , image: "Energizee", header: "Energize", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //5
-            ProductModel(description: """
-            Immune Booster oil blend is designed to support the immune and lymphatic systems.
-
-            Ingredients
-            Black Spruce: Fatigue, sluggishness, infections, stress, immune support, adrenal support.
-            Cistus: Infections, lymphatic support.
-            Lemon: Infections, poor circulation, mild depression, immune support.
-            Niaouli: Infections, fatigue, sluggishness, immune support.
-            Oregano: Infections, sluggishness, immune support.
-            Plai: Infections, poor circulation, stress.
-            Thyme, ct. linalol: Infections, poor circulation, stress, immune support.
-            Ylang Ylang, Extra: Physical tension, tense breathing, nervous tension, mild depression, stress.
-
-            Methods of Use
-            After Shower: After showering, while your skin is still wet, put 1-3 drops of essential oil in the palm of one of your hands and rub your hands together. Quickly and evenly spread the essential oil over your legs, arms, and torso. Avoid sensitive-skin areas. For maximum skin hydration and to seal in moisture, apply cream, lotion or body oil directly to damp skin.
-
-            Bath, Foot: Mix 1-3 drops of essential oil in 1/2 teaspoon of carrier oil, such as fractionated coconut oil. Set aside. Fill a tub (deep enough to cover your feet and ankles) with warm water. Add the essential oil mixture, stir well, and immerse your feet for 10-15 minutes. Breathe in the aroma and massage your feet.
-
-            Diffusion: Follow diffuser manufacturer’s instructions to fill the air with therapeutic aroma.
-            Easy alternatives when you don’t have a diffuser:
-            Place 2-4 drops of essential oil on several cotton balls or tissues; place nearby or tuck into the grate of fan or air vent in your home or car.
-
-            Inhalation: Put 1-3 drops of essential oil on a tissue and inhale the aroma through your nose. Pause and inhale again.
-            (Avoid touching your nose with the tissue.)
-
-            Massage: Mix 6-30 drops of essential oil in 1 ounce of carrier oil or fragrance-free, natural lotion.
-
-            The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
-
-            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
-            """
-                         , image: "ImmuneBooster", header: "Immune Booster", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //5
-            ProductModel(description: """
-            St. Michael & Company’s Calmness & Tranquility
-
-            The following essential oils are in Calmness & Tranquility Blend (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
-
-            Ingredients
-
-            Grape Seed Oil
-            Lavender: Tense breathing, muscle spasms, muscle aches, headaches, itching, stress, nervous tension, anxiety, nervous exhaustion, mood swings, anger, sleeplessness.
-            Orange, Sweet: Nervous tension, mild depression, worry, mental fatigue.
-            Patchouli: Tense breathing, rapid breathing, nervous exhaustion, stress, mood swings, mild depression.
-            Bergamot: antiseptic, antispasmodic, and analgesic (pain-relieving). muscle aches, stress, tension, anxiety, fear.
-            Ylang Ylang Extra: Rapid breathing, tense breathing, general tension, stress, anxiety, sleeplessness, nervous tension, mild depression, anger, shock. Seed Oil
-            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
-
-            These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
-
-            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
-
-
-            """
-                         , image: "Peace", header: "Peace", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //6
-            ProductModel(description: """
-            St. Michael & Company Wellness Oil Blend Roll-Ons are a convenient and easy way to enjoy essential oils.  Carefully selected from ISO certified sources worldwide, these oil blends are safe, pleasant, organic, 100% pure and of the highest quality.  Essential oils are concentrated and potent, so certain precautions should be taken. Store essential oils at steady room temperature away from the bright sunlight. Please visit our website to see our full line of essential oil single notes, blends, and other aromatherapy products.
-
-            REFRESHING MINT – (Blend contains: Peppermint, Eucalyptus, Wintergreen)
-            """
-                         , image: "RefreshingMind", header: "Refreshing Mint", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //7
-            ProductModel(description: """
-            St. Michael & Company’s Refreshing Mint Oil blend  relieves nausea, headache and migraine, indigestion, pain, reduce inflammation, and relaxes the muscles .
-
-            Ingredients
-
-            Lavender- Reduces anxiety and emotional stress, improves brain function, antioxidant,
-            Wintergreen- Act like a natural analgesic (pain reducer), antiarthritic, antiseptic and astringent.
-            Eucalyptus – Reduces inflammation, relieves pain
-            Peppermint – Cooling effect relieves stress, increases feelings of calm and relaxation, as well as a greater decrease in breathing rate and blood pressure,,
-            Fennel-Sedates inflammation
-            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
-
-            These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
-
-            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
-            """
-                         , image: "RefreshingMint", header: "Refreshing Mint", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //8
-            ProductModel(description: """
-            Respiratory St. Michael & Company Wellness Oil blend is designed to ease congestion, reduce the risk of infection, and support the immune system. This exceptional blend also contains antispasmodic essential oils to relax the chest muscles and support deep breathing, while uplifting and refreshing the mind.
-
-            Our 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of fractionated coconut oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
-
-            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
-
-            METHODS OF USE
-            Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
-
-            INGREDIENTS
-            Black Spruce: Decongestant, immune support. Calms, grounds, and restores the mind.
-            Eucalyptus Citriodora: Antiseptic, anti-inflammatory, immune support. Calms and refreshes the mind.
-            Eucalyptus Globulus: Decongestant, antiseptic, immune support. Refreshes and uplifts the mind.
-            Eucalyptus Radiata: Decongestant, antiseptic, anti-inflammatory, immune support. Refreshes and uplifts the mind.
-            Lavender: Decongestant, antiseptic, adaptogenic. Helps balance mood swings, promotes a sense of well-being.
-            Marjoram, Sweet: Antiseptic, antispasmodic, sedative. Calms and strengthens the mind.
-            Myrtle, Lemon: Decongestant, antiseptic. Uplifts and refreshes the mind.
-            Peppermint: Antiseptic, antispasmodic, decongestant. Refreshes, uplifts, and clears the mind.
-            Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
-
-             
-
-            The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
-
-            For external use only. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
-            """
-                         , image: "Respiratory", header: "Respiratory", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //9
-            ProductModel(description: """
-            Sleeptime oil blend promotes relaxation and comfort before bedtime to encourage a restful and rejuvenating sleep. This soothing blend combines Lavender, long known for its gentle, sedative action; calming and uplifting Mandarin, excellent for easing symptoms of mild depression; Sandalwood and Chamomile to support quieting a restless mind.
-
-            Our 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of fractionated coconut oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
-
-            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
-
-            METHODS OF USE
-            Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
-
-            INGREDIENTS
-            Chamomile, Roman: Sleeplessness, stress, tension, anxiety, anger, fear, worry, shock, impatience.
-            Lavender: Sleeplessness, stress nervous tension, anxiety, nervous exhaustion, mood swings, anger.
-            Mandarin, Red: Sleeplessness, mild depression, stress, anxiety, tension, restlessness.
-            Orange Sweet: Nervous tension, mild depression, worry, mental fatigue.
-            Sandalwood: Sleeplessness, anxiety, tension, stress, sense of isolation, emotional instability.
-            Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
-
-             
-
-            The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
-
-            For external use only. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
-            """
-                         , image: "Sleeptime", header: "Sleeptime", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //10
-            ProductModel(description: """
-            ST MICHAEL MUSCLE SOOTHE BLEND  RELEASES PHYSICAL AND EMOTIONAL TENSION, RELAXES TIGHT MUSCLES.  IT IS PAIN RELIEVING AND BALANCING.
-            INGREDIENTS
-            Chamomile, Roman: Muscle aches, muscle spasms, muscle tension, mild depression, over-sensitivity, emotional discomfort, worry, shock, tension, anxiety, stress.
-            Geranium: Muscle aches, poor circulation, mild depression, imbalance, mood swings.
-            Lavender: Muscle aches, muscle spasms, sinus congestion, inflammation, mild depression, emotional discomfort, tension, anxiety, stress.
-            Peppermint: Muscle aches, muscle spasms, headaches, inflammation, nerve pain, sinus congestion, feeling over-heated, mild depression, anger.
-            Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
-
-            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
-
-            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
-
-            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
-
-            This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
-            """
-                         , image: "MuscleSoothe", header: "Muscle Soothe", category: "Wellness Essential Oil Blends", price: "$12.99"),
-            
-            //11
             ProductModel(description: """
             Uplifting Oil blend is designed to gently uplift, balance, and refresh the emotions, while promoting a sense of well-being.
 
@@ -726,7 +457,283 @@ These products are not intended to diagnose, treat, cure or prevent any disease.
 
             Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
             """
-                         , image: "Uplifting", header: "Uplifting", category: "Wellness Essential Oil Blends", price: "$12.99"),
+                         , image: "Uplifting", header: "Uplifting", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            //2
+            ProductModel(description: """
+Change St. Michael & Company Wellness Essential Oil Blend  promotes a sense of inner peace and acceptance in times of change. This extraordinary blend combines essential oils that calm, balance, uplift, and stabilize. Together they encourage profound feelings of comfort and well-being.
+
+Our 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of fractionated coconut oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
+
+Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
+
+METHODS OF USE
+Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
+
+INGREDIENTS
+Bergamot, FCF: Sedative. Calms yet uplifts the mind, helps balance mood swings, promotes a sense of well-being.
+Black Spruce: Immune support. Calms, grounds, and restores the mind.
+Frankincense: Immune support. Slows and deepens the breath. Calms, relaxes, and comforts the mind.
+Geranium: Circulatory tonic, general tonic, immune support. Helps balance mood swings, calms, and uplifts the mind. Promotes a sense of well-being.
+Ho Wood: Calms anxiety, tension, stress and promotes feelings of peace.
+Hyssop: Immune support. Strengthens and uplifts the mind. Promotes mental clarity and focus.
+Melissa: Nervine, sedative. Calms, comforts, and uplifts the mind. Promotes a sense of well-being.
+Myrrh: Immune support. Calms, grounds, and soothes the mind.
+Rose: Sedative. Soothes, calms, and uplifts the mind. Promotes a sense of well-being.
+Sandalwood: Sedative. Profoundly calms, relaxes, and stabilizes the mind. Promotes a sense of well-being.
+Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
+
+The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
+
+For external use only. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+
+These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+"""
+                         , image: "change", header: "Change", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            //3
+            ProductModel(description:
+                            """
+    St. Michael & Company’s Colds & Sinus
+
+    The following essential oils are in Colds & Sinus Blend (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
+
+    Ingredients
+
+    Grape Seed Oil
+    Lavender: Tense breathing, muscle spasms, muscle aches, headaches, itching, stress, nervous tension, anxiety, nervous exhaustion, mood swings, anger,
+    Eucalyptus, Globulus: Infections, respiratory congestion, sore throats, fevers, immune support.
+    Peppermint: Infections, respiratory congestion, fevers, muscle aches, lymphatic support, immune support.
+    Tea Tree: Infections, respiratory congestion, immune support sleeplessness.
+    HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+
+    These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+
+    Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
+    """
+                         , image: "cold_sinus", header: "Cold & Sinus", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //4
+            ProductModel(description: """
+            St. Michael & Company’s Energize oil blend is designed to uplift the spirits and reduce fatigue. The following essential oils are in Energize Up (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
+
+             
+
+            Ingredients
+
+            Bergamot, FCF: Immune support, mild depression, stress, anxiety, nervousness, mood swings, apathy.
+            Lavender: Stress, tense breathing, nervous tension, anxiety, nervous exhaustion, mood swings, anger.
+            Lemon: Immune support, mental fog, mental clarity, mild depression.
+            Lemongrass: Stress, anxiety, nervous exhaustion, mental fatigue, mental fog, mild depression.
+            Melissa: Rapid breathing, anxiety, mild depression, tension, fear, crisis, shock, anger.
+            Orange, Sweet: Nervous tension, mild depression, worry, mental fatigue.
+            Peppermint: Mental fatigue, mental fog, anger, nervous stress, mild depression, shock.
+
+            Methods of Use
+
+             
+
+            Diffusion: Follow diffuser manufacturer’s instructions to fill the air with therapeutic aroma.
+            Easy alternatives when you don’t have a diffuser:
+            Place 2-4 drops of essential oil on several cotton balls or tissues; place nearby or tuck into the grate of fan or air vent in your home or car.
+
+            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+             
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+            """
+                         , image: "Energizee", header: "Energize", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //5
+            ProductModel(description: """
+            Immune Booster oil blend is designed to support the immune and lymphatic systems.
+
+            Ingredients
+            Black Spruce: Fatigue, sluggishness, infections, stress, immune support, adrenal support.
+            Cistus: Infections, lymphatic support.
+            Lemon: Infections, poor circulation, mild depression, immune support.
+            Niaouli: Infections, fatigue, sluggishness, immune support.
+            Oregano: Infections, sluggishness, immune support.
+            Plai: Infections, poor circulation, stress.
+            Thyme, ct. linalol: Infections, poor circulation, stress, immune support.
+            Ylang Ylang, Extra: Physical tension, tense breathing, nervous tension, mild depression, stress.
+
+            Methods of Use
+            After Shower: After showering, while your skin is still wet, put 1-3 drops of essential oil in the palm of one of your hands and rub your hands together. Quickly and evenly spread the essential oil over your legs, arms, and torso. Avoid sensitive-skin areas. For maximum skin hydration and to seal in moisture, apply cream, lotion or body oil directly to damp skin.
+
+            Bath, Foot: Mix 1-3 drops of essential oil in 1/2 teaspoon of carrier oil, such as fractionated coconut oil. Set aside. Fill a tub (deep enough to cover your feet and ankles) with warm water. Add the essential oil mixture, stir well, and immerse your feet for 10-15 minutes. Breathe in the aroma and massage your feet.
+
+            Diffusion: Follow diffuser manufacturer’s instructions to fill the air with therapeutic aroma.
+            Easy alternatives when you don’t have a diffuser:
+            Place 2-4 drops of essential oil on several cotton balls or tissues; place nearby or tuck into the grate of fan or air vent in your home or car.
+
+            Inhalation: Put 1-3 drops of essential oil on a tissue and inhale the aroma through your nose. Pause and inhale again.
+            (Avoid touching your nose with the tissue.)
+
+            Massage: Mix 6-30 drops of essential oil in 1 ounce of carrier oil or fragrance-free, natural lotion.
+
+            The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
+
+            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+            """
+                         , image: "ImmuneBooster", header: "Immune Booster", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //5
+            ProductModel(description: """
+            St. Michael & Company’s Calmness & Tranquility
+
+            The following essential oils are in Calmness & Tranquility Blend (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
+
+            Ingredients
+
+            Grape Seed Oil
+            Lavender: Tense breathing, muscle spasms, muscle aches, headaches, itching, stress, nervous tension, anxiety, nervous exhaustion, mood swings, anger, sleeplessness.
+            Orange, Sweet: Nervous tension, mild depression, worry, mental fatigue.
+            Patchouli: Tense breathing, rapid breathing, nervous exhaustion, stress, mood swings, mild depression.
+            Bergamot: antiseptic, antispasmodic, and analgesic (pain-relieving). muscle aches, stress, tension, anxiety, fear.
+            Ylang Ylang Extra: Rapid breathing, tense breathing, general tension, stress, anxiety, sleeplessness, nervous tension, mild depression, anger, shock. Seed Oil
+            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+
+            These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
+
+
+            """
+                         , image: "Peace", header: "Peace", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //6
+            ProductModel(description: """
+            St. Michael & Company Wellness Oil Blend Roll-Ons are a convenient and easy way to enjoy essential oils.  Carefully selected from ISO certified sources worldwide, these oil blends are safe, pleasant, organic, 100% pure and of the highest quality.  Essential oils are concentrated and potent, so certain precautions should be taken. Store essential oils at steady room temperature away from the bright sunlight. Please visit our website to see our full line of essential oil single notes, blends, and other aromatherapy products.
+
+            REFRESHING MINT – (Blend contains: Peppermint, Eucalyptus, Wintergreen)
+            """
+                         , image: "RefreshingMind", header: "Refreshing Mint", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //7
+            ProductModel(description: """
+            St. Michael & Company’s Refreshing Mint Oil blend  relieves nausea, headache and migraine, indigestion, pain, reduce inflammation, and relaxes the muscles .
+
+            Ingredients
+
+            Lavender- Reduces anxiety and emotional stress, improves brain function, antioxidant,
+            Wintergreen- Act like a natural analgesic (pain reducer), antiarthritic, antiseptic and astringent.
+            Eucalyptus – Reduces inflammation, relieves pain
+            Peppermint – Cooling effect relieves stress, increases feelings of calm and relaxation, as well as a greater decrease in breathing rate and blood pressure,,
+            Fennel-Sedates inflammation
+            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+
+            These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+
+            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
+            """
+                         , image: "RefreshingMint", header: "Refreshing Mint", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //8
+            ProductModel(description: """
+            Respiratory St. Michael & Company Wellness Oil blend is designed to ease congestion, reduce the risk of infection, and support the immune system. This exceptional blend also contains antispasmodic essential oils to relax the chest muscles and support deep breathing, while uplifting and refreshing the mind.
+
+            Our 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of fractionated coconut oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
+
+            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
+
+            METHODS OF USE
+            Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
+
+            INGREDIENTS
+            Black Spruce: Decongestant, immune support. Calms, grounds, and restores the mind.
+            Eucalyptus Citriodora: Antiseptic, anti-inflammatory, immune support. Calms and refreshes the mind.
+            Eucalyptus Globulus: Decongestant, antiseptic, immune support. Refreshes and uplifts the mind.
+            Eucalyptus Radiata: Decongestant, antiseptic, anti-inflammatory, immune support. Refreshes and uplifts the mind.
+            Lavender: Decongestant, antiseptic, adaptogenic. Helps balance mood swings, promotes a sense of well-being.
+            Marjoram, Sweet: Antiseptic, antispasmodic, sedative. Calms and strengthens the mind.
+            Myrtle, Lemon: Decongestant, antiseptic. Uplifts and refreshes the mind.
+            Peppermint: Antiseptic, antispasmodic, decongestant. Refreshes, uplifts, and clears the mind.
+            Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
+
+             
+
+            The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
+
+            For external use only. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+            """
+                         , image: "Respiratory", header: "Respiratory", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //9
+            ProductModel(description: """
+            Sleeptime oil blend promotes relaxation and comfort before bedtime to encourage a restful and rejuvenating sleep. This soothing blend combines Lavender, long known for its gentle, sedative action; calming and uplifting Mandarin, excellent for easing symptoms of mild depression; Sandalwood and Chamomile to support quieting a restless mind.
+
+            Our 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of fractionated coconut oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
+
+            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
+
+            METHODS OF USE
+            Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
+
+            INGREDIENTS
+            Chamomile, Roman: Sleeplessness, stress, tension, anxiety, anger, fear, worry, shock, impatience.
+            Lavender: Sleeplessness, stress nervous tension, anxiety, nervous exhaustion, mood swings, anger.
+            Mandarin, Red: Sleeplessness, mild depression, stress, anxiety, tension, restlessness.
+            Orange Sweet: Nervous tension, mild depression, worry, mental fatigue.
+            Sandalwood: Sleeplessness, anxiety, tension, stress, sense of isolation, emotional instability.
+            Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
+
+             
+
+            The Methods of Use are general guidelines. Individual sensitivities, desired results, and the characteristics of the essential oil(s) used must all be considered. Adjust methods and proportions accordingly.
+
+            For external use only. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+            """
+                         , image: "Sleeptime", header: "Sleeptime", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //10
+            ProductModel(description: """
+            ST MICHAEL MUSCLE SOOTHE BLEND  RELEASES PHYSICAL AND EMOTIONAL TENSION, RELAXES TIGHT MUSCLES.  IT IS PAIN RELIEVING AND BALANCING.
+            INGREDIENTS
+            Chamomile, Roman: Muscle aches, muscle spasms, muscle tension, mild depression, over-sensitivity, emotional discomfort, worry, shock, tension, anxiety, stress.
+            Geranium: Muscle aches, poor circulation, mild depression, imbalance, mood swings.
+            Lavender: Muscle aches, muscle spasms, sinus congestion, inflammation, mild depression, emotional discomfort, tension, anxiety, stress.
+            Peppermint: Muscle aches, muscle spasms, headaches, inflammation, nerve pain, sinus congestion, feeling over-heated, mild depression, anger.
+            Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
+
+            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+
+            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+
+            This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
+            """
+                         , image: "MuscleSoothe", header: "Muscle Soothe", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
+            //11
+            ProductModel(description: """
+St. Michael & Company’s Calmness Wellness Blend provides gentle comfort and support when needed.The following essential oils are in Solace (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
+
+Ingredients
+Geranium: Immune support, stress, anxiety, mood swings, mild depression.
+Helichrysum: Muscle aches, immune support, mild depression, nervous exhaustion, shock.
+Peppermint: Respiratory congestion, muscle spasms, mental fatigue, mental fog, nervous stress, mild depression.
+Wintergreen: Muscle aches, muscle cramps, mental fog.
+Ylang Ylang Extra: Rapid breathing, tense breathing, general tension, stress, anxiety, sleeplessness, nervous tension, mild depression, anger, shock.
+
+HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+
+For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+"""
+                         , image: "calmness", header: "Calmness", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            
         ]
         return list
     }
@@ -1247,7 +1254,7 @@ For external use only. Always dilute before use. Keep out of reach of children. 
 
 Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
 """
-                         , image: "eucalyptus", header: "Eucalyptus", category: "Essential Oils", price: "$9.99"),
+                         , image: "eucalyptus", header: "Eucalyptus", category: "Essential Oil", price: "$9.99"),
             
             //1
             ProductModel(description: """
@@ -1326,7 +1333,7 @@ For external use only. Always dilute before use. Keep out of reach of children. 
 
 Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
 """
-                         , image: "Lavender", header: "Lavender", category: "Essential Oils", price: "$9.99"),
+                         , image: "Lavender", header: "Lavender", category: "Essential Oil", price: "$9.99"),
             
             //2
             ProductModel(description: """
@@ -1384,7 +1391,7 @@ For external use only. Always dilute before use. Keep out of reach of children. 
 
 Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
 """
-                         , image: "Lemon", header: "Lemon", category: "Essential Oils", price: "$9.99"),
+                         , image: "Lemon", header: "Lemon", category: "Essential Oil", price: "$9.99"),
             
             //3
             ProductModel(description: """
@@ -1447,7 +1454,7 @@ For external use only. Always dilute before use. Keep out of reach of children. 
 
 Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
 """
-                         , image: "Orange", header: "Orange", category: "Essential Oils", price: "$9.99"),
+                         , image: "Orange", header: "Orange", category: "Essential Oil", price: "$9.99"),
             
             //4
             ProductModel(description: """
@@ -1505,7 +1512,7 @@ For external use only. Always dilute before use. Keep out of reach of children. 
 
 Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
 """
-                         , image: "Peppermint", header: "Peppermint", category: "Essential Oils", price: "$9.99"),
+                         , image: "Peppermint", header: "Peppermint", category: "Essential Oil", price: "$9.99"),
             
             //5
             ProductModel(description: """
@@ -1565,7 +1572,7 @@ For external use only. Always dilute before use. Keep out of reach of children. 
 
 Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
 """
-                         , image: "tea_tree", header: "Tea Tree", category: "Essential Oils", price: "$9.99"),
+                         , image: "tea_tree", header: "Tea Tree", category: "Essential Oil", price: "$9.99"),
         ]
         return list
     }

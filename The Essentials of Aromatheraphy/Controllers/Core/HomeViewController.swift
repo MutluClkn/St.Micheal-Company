@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SnapKit
 import Parchment
 
 class HomeViewController: UIViewController {
@@ -17,12 +16,47 @@ class HomeViewController: UIViewController {
     let wellnessKitVC = WellnessKitProductViewController()
     let essentialOilVC = EssentialOilProductViewController()
 
+    private let pagingViewController = ImagePagingViewController()
     
+    private let items = [
+        ImageItem(index: 0, title: "Patient Care", headerImage: UIImage(named: "breathe_away")!, images: [UIImage(named: "breathe_away")!]),
+        ImageItem(index: 1, title: "Wellness Blend", headerImage: UIImage(named: "breathe_away")!, images: [UIImage(named: "breathe_away")!]),
+        ImageItem(index: 2, title: "Wellness Dropper", headerImage: UIImage(named: "breathe_away")!, images: [UIImage(named: "breathe_away")!]),
+        ImageItem(index: 3, title: "Wellness Kit", headerImage: UIImage(named: "breathe_away")!, images: [UIImage(named: "breathe_away")!]),
+        ImageItem(index: 4, title: "Essential Oil", headerImage: UIImage(named: "breathe_away")!, images: [UIImage(named: "breathe_away")!]),
+    ]
+    
+    private let menuInsets = UIEdgeInsets(top: 12, left: 18, bottom: 12, right: 18)
+    private let menuItemSize = CGSize(width: 120, height: 100)
+    
+    private var menuHeight: CGFloat {
+        return menuItemSize.height + menuInsets.top + menuInsets.bottom
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureNavBar()
+        
+        pagingViewController.register(ImagePagingCell.self, for: ImageItem.self)
+        pagingViewController.menuItemSize = .fixed(width: menuItemSize.width, height: menuItemSize.height)
+        pagingViewController.menuItemSpacing = 8
+        pagingViewController.menuInsets = menuInsets
+        pagingViewController.borderColor = UIColor(white: 0, alpha: 0.1)
+        pagingViewController.indicatorColor = .black
+        
+        pagingViewController.indicatorOptions = .visible(
+            height: 1,
+            zIndex: Int.max,
+            spacing: UIEdgeInsets.zero,
+            insets: UIEdgeInsets.zero
+        )
+
+        pagingViewController.borderOptions = .visible(
+            height: 1,
+            zIndex: Int.max - 1,
+            insets: UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+        )
         
         let pagingVC = PagingViewController(viewControllers: [
             patientCareVC,
@@ -31,7 +65,7 @@ class HomeViewController: UIViewController {
             wellnessKitVC,
             essentialOilVC
         ])
-        
+
         
         addChild(pagingVC)
         view.addSubview(pagingVC.view)
