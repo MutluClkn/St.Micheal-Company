@@ -30,6 +30,7 @@
 		FA7CAD5F27F827F1009D96D6 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */; };
 		FA7CAD6227F829C6009D96D6 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = FA7CAD6127F829C6009D96D6 /* SnapKit */; };
 		FA7CAD6427F82C4D009D96D6 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */; };
+		FAA801A1281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAA8019F281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodeld */; };
 		FAA9D7F7281D467300E3112A /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D7F6281D467300E3112A /* ImageCollectionViewCell.swift */; };
 		FAA9D7F9281D475A00E3112A /* ImagePagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D7F8281D475A00E3112A /* ImagePagingCell.swift */; };
 		FAA9D7FB281D48F900E3112A /* ImagePagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA9D7FA281D48F900E3112A /* ImagePagingView.swift */; };
@@ -85,6 +86,7 @@
 		FA57F2E727E25D580043E11E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		FA7CAD5E27F827F1009D96D6 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		FA7CAD6327F82C4D009D96D6 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		FAA801A0281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EssentialOfAromatheraphyDataModel.xcdatamodel; sourceTree = "<group>"; };
 		FAA9D7F6281D467300E3112A /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		FAA9D7F8281D475A00E3112A /* ImagePagingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCell.swift; sourceTree = "<group>"; };
 		FAA9D7FA281D48F900E3112A /* ImagePagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				FA2CA8CC27CA3C1D007A2D72 /* Controllers */,
 				FA2CA8AA27CA1FA0007A2D72 /* Info.plist */,
 				FA818690280206DB001AD4FD /* Others */,
+				FAA8019F281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodeld */,
 			);
 			path = "The Essentials of Aromatheraphy";
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				FAA9D7F7281D467300E3112A /* ImageCollectionViewCell.swift in Sources */,
 				FAD54D8A281C15C4004F32B1 /* ImageItem.swift in Sources */,
 				FAF3D8BC27FAEECA005B94FE /* ProductCaller.swift in Sources */,
+				FAA801A1281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodeld in Sources */,
 				FA2CA8DB27CA7465007A2D72 /* CollectionViewTableViewCell.swift in Sources */,
 				FA03D724280C360200BAE72A /* EssentialOilProductViewController.swift in Sources */,
 				FAA9D7FD281D492100E3112A /* ImagePagingViewController.swift in Sources */,
@@ -617,9 +621,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "The Essentials of Aromatheraphy";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -629,7 +634,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -646,9 +651,10 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "The Essentials of Aromatheraphy";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -658,7 +664,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -806,6 +812,19 @@
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FAA8019F281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FAA801A0281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodel */,
+			);
+			currentVersion = FAA801A0281EA7B700D63640 /* EssentialOfAromatheraphyDataModel.xcdatamodel */;
+			path = EssentialOfAromatheraphyDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA2CA89127CA1F9E007A2D72 /* Project object */;
 }

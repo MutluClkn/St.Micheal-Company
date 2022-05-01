@@ -53,6 +53,7 @@ class WellnessDropperProductViewController: UIViewController, UITableViewDelegat
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         DispatchQueue.main.async {
             let vc = ProductInfoViewController()
             vc.titleLabel.text = self.products[indexPath.row].header

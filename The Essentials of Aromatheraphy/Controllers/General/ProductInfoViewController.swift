@@ -5,6 +5,7 @@
 //  Created by Mutlu Çalkan on 16.03.2022.
 //
 import UIKit
+import CoreData
 
 class ProductInfoViewController: UIViewController {
 
@@ -94,12 +95,13 @@ class ProductInfoViewController: UIViewController {
         
         let addToCartButton : UIButton = {
             let button = UIButton()
-            button.setTitle("Cart", for: .normal)
+            button.setTitle("Add To Favorities", for: .normal)
             button.tintColor = .white
-            button.backgroundColor = .white
+            button.backgroundColor = .darkText
             button.translatesAutoresizingMaskIntoConstraints = false
             button.layer.cornerRadius = 20
             button.layer.masksToBounds = true
+            button.addTarget(self, action: #selector(addToFavorities), for: .touchUpInside)
             
             return button
         }()
@@ -137,8 +139,6 @@ class ProductInfoViewController: UIViewController {
             return text
         }()
         
-        
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -158,6 +158,7 @@ class ProductInfoViewController: UIViewController {
        // productSelection()
         configureConstraints()
         
+        
 //        stepper.addTarget(self, action: #selector(stepperValueChanged(_:)), for: .valueChanged)
 //        amountLabel.text = stepper.value.description
         
@@ -167,6 +168,26 @@ class ProductInfoViewController: UIViewController {
         super.viewDidLayoutSubviews()
         scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height: 2000)
         scrollView.isScrollEnabled = true
+    }
+    
+    @objc func addToFavorities(_ sender: Any){
+        print("clicked")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let favorities = NSEntityDescription.insertNewObject(forEntityName: "Favorities", into: context)
+        favorities.setValue(productImage.image, forKey: "image")
+        favorities.setValue(titleLabel.text!, forKey: "header")
+        favorities.setValue(subLabel.text!, forKey: "categories")
+        favorities.setValue(priceLabel.text!, forKey: "price")
+        favorities.setValue(productDescription.text!, forKey: "descript")
+        
+        do{
+            try context.save()
+            print("saved")
+        }catch{
+            print("error")
+        }
     }
     
 //    @objc func stepperValueChanged(_ sender: UIStepper!){
@@ -219,8 +240,8 @@ class ProductInfoViewController: UIViewController {
             addToCartButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
 //            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
 //            addToCartButton.widthAnchor.constraint(equalToConstant: 50)
-            addToCartButton.heightAnchor.constraint(equalToConstant: 55),
-            addToCartButton.widthAnchor.constraint(equalToConstant: 75)
+            addToCartButton.heightAnchor.constraint(equalToConstant: 50),
+            addToCartButton.widthAnchor.constraint(equalToConstant: 170)
         ]
         
 //        let stepperConstraints = [
