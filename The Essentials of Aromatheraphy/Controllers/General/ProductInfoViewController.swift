@@ -72,18 +72,18 @@ class ProductInfoViewController: UIViewController {
         return label
     }()
     
-    let addToFavoritesButton : UIButton = {
-        let button = UIButton()
-        button.setTitle("Add To Favorites", for: .normal)
-        button.tintColor = .white
-        button.backgroundColor = .darkText
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.layer.cornerRadius = 20
-        button.layer.masksToBounds = true
-        button.isUserInteractionEnabled = true
-        button.addTarget(self, action: #selector(addToFavoritesButtonDidPressed), for: .touchUpInside)
-        return button
-    }()
+//    let addToFavoritesButton : UIButton = {
+//        let button = UIButton()
+//        button.setTitle("Add To Favorites", for: .normal)
+//        button.tintColor = .white
+//        button.backgroundColor = .darkText
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.layer.cornerRadius = 20
+//        button.layer.masksToBounds = true
+//        button.isUserInteractionEnabled = true
+//        button.addTarget(self, action: #selector(addToFavoritesButtonDidPressed), for: .touchUpInside)
+//        return button
+//    }()
     
     let descriptionTitle : UILabel = {
         let label = UILabel()
@@ -127,7 +127,7 @@ class ProductInfoViewController: UIViewController {
         contentView.addSubview(productImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(subLabel)
-        contentView.addSubview(addToFavoritesButton)
+//        contentView.addSubview(addToFavoritesButton)
         contentView.addSubview(productDescription)
         contentView.addSubview(descriptionTitle)
 
@@ -142,25 +142,25 @@ class ProductInfoViewController: UIViewController {
         scrollView.isScrollEnabled = true
     }
     
-    @objc func addToFavoritesButtonDidPressed(){
-        print("clicked")
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-
-        let favorities = NSEntityDescription.insertNewObject(forEntityName: "Favorites", into: context)
-       // favorities.setValue(productImage.image, forKey: "image")
-        favorities.setValue(titleLabel.text!, forKey: "header")
-        favorities.setValue(subLabel.text!, forKey: "categories")
-        favorities.setValue(priceLabel.text!, forKey: "price")
-        favorities.setValue(productDescription.text!, forKey: "descript")
-
-        do{
-            try context.save()
-            print("saved")
-        }catch{
-            print("error")
-        }
-    }
+//    @objc func addToFavoritesButtonDidPressed(){
+//        print("clicked")
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//
+//        let favorities = NSEntityDescription.insertNewObject(forEntityName: "Favorites", into: context)
+//       // favorities.setValue(productImage.image, forKey: "image")
+//        favorities.setValue(titleLabel.text!, forKey: "header")
+//        favorities.setValue(subLabel.text!, forKey: "categories")
+//        favorities.setValue(priceLabel.text!, forKey: "price")
+//        favorities.setValue(productDescription.text!, forKey: "descript")
+//
+//        do{
+//            try context.save()
+//            print("saved")
+//        }catch{
+//            print("error")
+//        }
+//    }
     
     
     func configureConstraints() {
@@ -184,22 +184,22 @@ class ProductInfoViewController: UIViewController {
             subLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20)
         ]
         
-        let addToFavoritesButtonConstraints = [
-            
-            addToFavoritesButton.topAnchor.constraint(equalTo: subLabel.bottomAnchor, constant: 30),
-            addToFavoritesButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
-            addToFavoritesButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
-            addToFavoritesButton.heightAnchor.constraint(equalToConstant: 50),
-        ]
+//        let addToFavoritesButtonConstraints = [
+//
+//            addToFavoritesButton.topAnchor.constraint(equalTo: subLabel.bottomAnchor, constant: 30),
+//            addToFavoritesButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
+//            addToFavoritesButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 30),
+//            addToFavoritesButton.heightAnchor.constraint(equalToConstant: 50),
+//        ]
         
         
         let descriptionTitleConstraints = [
-            descriptionTitle.topAnchor.constraint(equalTo: addToFavoritesButton.bottomAnchor, constant: 30),
+            descriptionTitle.topAnchor.constraint(equalTo: subLabel.bottomAnchor, constant: 55),
             descriptionTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
         ]
         
         let productDescriptionConstraints = [
-            productDescription.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 30),
+            productDescription.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 20),
             productDescription.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             productDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             productDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
@@ -208,7 +208,7 @@ class ProductInfoViewController: UIViewController {
         NSLayoutConstraint.activate(productImageConstraints)
         NSLayoutConstraint.activate(titleLabelConstraints)
         NSLayoutConstraint.activate(subLabelConstraints)
-        NSLayoutConstraint.activate(addToFavoritesButtonConstraints)
+        //NSLayoutConstraint.activate(addToFavoritesButtonConstraints)
         NSLayoutConstraint.activate(productDescriptionConstraints)
         NSLayoutConstraint.activate(descriptionTitleConstraints)
         
