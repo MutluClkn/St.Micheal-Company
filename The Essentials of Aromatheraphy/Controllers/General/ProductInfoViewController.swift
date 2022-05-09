@@ -45,7 +45,7 @@ class ProductInfoViewController: UIViewController {
     
     let titleLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: 20, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -54,7 +54,8 @@ class ProductInfoViewController: UIViewController {
     
     let subLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = UIFont.italicSystemFont(ofSize: 15)
         label.textColor = .gray
         label.text = "Essential Oil"
         label.numberOfLines = 0
@@ -64,7 +65,7 @@ class ProductInfoViewController: UIViewController {
     
     let priceLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        label.font = .systemFont(ofSize: 20, weight: .semibold)
         label.textColor = .white
         label.text = "$9.99"
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -87,7 +88,7 @@ class ProductInfoViewController: UIViewController {
     
     let descriptionTitle : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.font = .systemFont(ofSize: 20, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         label.text = "Description"
@@ -97,24 +98,11 @@ class ProductInfoViewController: UIViewController {
     
     let productDescription : UILabel = {
         let text = UILabel()
-        text.font = .systemFont(ofSize: 18, weight: .regular)
+        text.font = .systemFont(ofSize: 15, weight: .regular)
         text.translatesAutoresizingMaskIntoConstraints = false
         text.numberOfLines = 0
         text.sizeToFit()
-        text.text = """
-    Latin name: Mentha piperita
-    Country of origin: USA
-    Part of the plant: Leaves, stems, flowers
-    Extraction method: Steam distilled
-    Main biochemical components*: Menthol, menthone, isomenthone
-    Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
-    Latin name: Mentha piperita
-    Country of origin: USA
-    Part of the plant: Leaves, stems, flowers
-    Extraction method: Steam distilled
-    Main biochemical components*: Menthol, menthone, isomenthone
-    Properties: Analgesic, anti-inflammatory, decongestant, stimulant, antispasmodic, astringent.
-    """
+        text.text = ""
         return text
     }()
     
@@ -199,7 +187,7 @@ class ProductInfoViewController: UIViewController {
         ]
         
         let productDescriptionConstraints = [
-            productDescription.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 20),
+            productDescription.topAnchor.constraint(equalTo: descriptionTitle.bottomAnchor, constant: 15),
             productDescription.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             productDescription.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             productDescription.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),

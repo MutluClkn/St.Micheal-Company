@@ -28,7 +28,7 @@ class TitleTableViewCell: UITableViewCell {
     
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .bold)
+        label.font = .systemFont(ofSize: 18, weight: .bold)
         label.text = "Peppermint St. Michael & Company Essential Oil"
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -37,7 +37,8 @@ class TitleTableViewCell: UITableViewCell {
     
     let subLabel : UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 17, weight: .regular)
+        label.font = .systemFont(ofSize: 15, weight: .regular)
+        label.font = UIFont.italicSystemFont(ofSize: 15)
         label.textColor = .gray
         label.text = "Essential Oil"
         label.numberOfLines = 0

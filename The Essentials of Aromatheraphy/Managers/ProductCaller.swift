@@ -20,95 +20,190 @@ class ProductCaller {
         let list = [
 
         // 0
-        ProductModel(description:
+            ProductModel(description: """
+            St. Michael & Company’s Energetic Vitality Oil blend is for high performing athletes to boost the immune system, reduce stress, detoxifying and powerful antioxidant
+
+            Ingredients
+
+            ·       Frankincense- Anti-inflammation, anti bacterial
+
+            ·       Lemon-Anti-microbial, anti tumoral, detoxifies the body
+
+            ·       Cypress – Removes toxins, reduces stress, regulates blood flow.
+
+            ·       Myrrh-Kills harmful bacteria, powerful antioxidant
+
+            ·       Lavender- Reduces anxiety and emotional stress, improves brain function, antioxidant,
+
+            ·       Vetiver- Prevents bacterial infection, speeds up healing
+
+            ·       Lemongrass – antibacterial, antifungal, anti-inflammatory, antioxidant
+
+             
+
+            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+
+             
+
+            These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+            """
+                         , image: "EnergeticVitality-1", header: "Energetic Vitality",category: "Patient Care and Care Givers' Blend", price: "$12.99"),
+            //1
+            ProductModel(description: """
+            St. Michael & Company’s Energize oil blend is designed to uplift the spirits and reduce fatigue. The following essential oils are in Energize Up (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
+
+             
+
+            Ingredients
+
+            Bergamot, FCF: Immune support, mild depression, stress, anxiety, nervousness, mood swings, apathy.
+            Lavender: Stress, tense breathing, nervous tension, anxiety, nervous exhaustion, mood swings, anger.
+            Lemon: Immune support, mental fog, mental clarity, mild depression.
+            Lemongrass: Stress, anxiety, nervous exhaustion, mental fatigue, mental fog, mild depression.
+            Melissa: Rapid breathing, anxiety, mild depression, tension, fear, crisis, shock, anger.
+            Orange, Sweet: Nervous tension, mild depression, worry, mental fatigue.
+            Peppermint: Mental fatigue, mental fog, anger, nervous stress, mild depression, shock.
+
+            Methods of Use
+
+             
+
+            Diffusion: Follow diffuser manufacturer’s instructions to fill the air with therapeutic aroma.
+            Easy alternatives when you don’t have a diffuser:
+            Place 2-4 drops of essential oil on several cotton balls or tissues; place nearby or tuck into the grate of fan or air vent in your home or car.
+
+            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+             
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+            """
+                         , image: "Energizee", header: "Energize", category: "Wellness Essential Oil Blend", price: "$12.99"),
+          //2
+            ProductModel(description: """
+            ST MICHAEL MUSCLE SOOTHE BLEND  RELEASES PHYSICAL AND EMOTIONAL TENSION, RELAXES TIGHT MUSCLES.  IT IS PAIN RELIEVING AND BALANCING.
+            INGREDIENTS
+            Chamomile, Roman: Muscle aches, muscle spasms, muscle tension, mild depression, over-sensitivity, emotional discomfort, worry, shock, tension, anxiety, stress.
+            Geranium: Muscle aches, poor circulation, mild depression, imbalance, mood swings.
+            Lavender: Muscle aches, muscle spasms, sinus congestion, inflammation, mild depression, emotional discomfort, tension, anxiety, stress.
+            Peppermint: Muscle aches, muscle spasms, headaches, inflammation, nerve pain, sinus congestion, feeling over-heated, mild depression, anger.
+            Fractionated Coconut Oil: Emollient plant oil used as a carrier to dilute the essential oils. Soothes, softens, and protects the skin.
+
+            HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+
+            For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+
+            Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.)
+
+            This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
+            """
+                         , image: "MuscleSoothe", header: "Muscle Soothe", category: "Wellness Essential Oil Blend", price: "$12.99"),
+            //3
+            ProductModel(description: """
+            Mgraine Ease St. Michael Wellness Essential Oil Blends 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of grape seed  oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
+
+            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
+
+            METHODS OF USE
+            Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
+
+             
+
+            This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
+            """
+                         , image: "Mgraine_Ease", header: "Mgraine Ease", category: "Wellness Essential Oil Blend Kit", price: "$12.99"),
+            //4
+            ProductModel(description: """
+Citrus & Mint St. Michael Wellness Essential Oil Blends 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of grape seed  oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use.
+
+Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
+
+METHODS OF USE
+Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
+
+ 
+
+This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
 """
-St. Michael & Company’s Breathe Away
+                         , image: "citrusandmint", header: "Citrus & Mint", category: "Wellness Essential Oil Blend Kit", price: "25.99"),
+            //5
+            ProductModel(description: """
+            Mindfully Present St- Michael Mind & Body Wellness Essential Oil Pack
 
-The following essential oils are in Breathe Easy Blend (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
+            Mindfully Present St- Michael Mind & Body Wellness Essential Oil Pack 10 ml roll-ons are 100 percent pure essential oils in a 10 percent dilution of grape seed oil. No need to mix or measure. The cobalt blue glass bottles protect the product from deterioration and the roller-ball applicator allows for easy, convenient, and safe topical use. (Pack includes Mindful Presence, Uplifting the Spirits, Mind & Body Calmness)
 
-Ingredients
+            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
 
-·         Grape Seed Oil
-·         Lemon: immune support, anxiety, stress, nervous tension, mild depression.
-·         Eucalyptus, Radiata: Respiratory congestion, immune support, mild depression, apathy.
-·         Wintergreen: Analgesic and anti-inflammatory .
-·         Peppermint: Respiratory congestion, muscle spasms, mental fatigue, mental fog, nervous stress, mild depression.
-HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+            METHODS OF USE
+            Anytime: Apply directly on your chest, torso, back of neck, shoulders, and bottom of feet. You can also apply a small amount in the palm of your hands; cup your hands over your nose and inhale the aroma.
 
-These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+             
 
-Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
-""",
-                                image: "breathe_away",
-                                header: "Breathe Away",
-                                category: "Patient Care and Care Givers' Blend",
-                     price: "$12.99"),
-        
-        // 1
-        ProductModel(description:
-"""
-St. Michael & Company Citrus Delight Oil blend energizing and refreshing. It is delightfully a combination of  citrus essential oils.
+            This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
+            """
+                         , image: "Mindfully_Present", header: "Mindfully Present", category: "Wellness Essential Oil Blend Kit", price: "$25.99"),
+            //6
+            ProductModel(description: """
+            RESTFUL WELLNESS PACK St. Michael’s Relief Wellness Pack includes four 10 ml roll on of essential oil blends for a restful sleep.
 
- Ingredients
+             
 
-·         Grape Seed Oil
+            ·      Sleepy Night – German Chamomile, Lavender,  Rose, Sweet Orange, Blue Tansy
 
-·         Sweet Orange: increase appetite, promotes, joy and well-being, energizing
+            ·      Mind & Body Calmness- Lavender, Frankincense, Cardamon, Blue Tansy, Rosewood
 
-·         Lime: revitalizing body and spirit, protection in one’s space, creating clarity – very helpful when on has an important decision to make.
+            ·      Mindful Presence – Ylang Ylang, Lavender, Rose, Sandalwood, Blue Tansy, Spruce
 
-·         Lemon: a spiritual cleanser, attract positivity, opens one to the fruitfulness of life.
+             
 
-·         Bergamot: brings peace and joy to the soul, amplifies energy, joy, and light.
+            Top Quality Assured Products
 
-HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+            St. Michael & Company Wellness Oil Blend Roll-Ons are a convenient and easy way to enjoy essential oils.  Carefully selected from ISO certified sources worldwide, these oil blends are safe, pleasant, organic, 100% pure and of the highest quality.  Essential oils are concentrated and potent, so certain precautions should be taken. Store essential oils at steady room temperature away from the bright sunlight. Please visit our website to see our full line of essential oil single notes, blends, and other aromatherapy products.
 
-These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
-""",
-                                image: "citrus_delight",
-                                header: "Citrus Delight",
-                                category: "Patient Care and Care Givers' Blend",
-                     price: "$12.99"),
-        //2
-        ProductModel(description: """
-St. Michael & Company’s Dgest Ease Oil blend is designed to enhance the digestive system (constipation and diarrhea).
-Ingredients
+             
 
-Peppermint,
-Ginger
-Fennel
-HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+             
 
-These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+            Methods of Use
 
-For external use only. Always dilute before use. Keep out of reach of children. Avoid eyes and other sensitive areas. Keep away from direct flame – essential oils are flammable. If pregnant or nursing, consult a physician before using essential oils. Store at room temperature and avoid direct sunlight.
+            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
 
-Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
-""",
-                     image: "dgest", header: "Dgest Ease", category: "Wellness Essential Oil Dropper", price: "$9.99" ),
-        
-        //3
-        ProductModel(description:
-                        """
-St. Michael & Company’s Colds & Sinus
+             
 
-The following essential oils are in Colds & Sinus Blend (alphabetical order). The therapeutic uses that are listed for each essential oil are those that are relevant to the purpose of this particular blend.
+             This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
+            """
+                         , image: "Restful", header: "Restful - Mind and Body Wellness Kit", category: "Wellness Essential Oil Blend Kit", price: "$25.99"),
+            //7
+            ProductModel(description: """
+            ENERGIZING WELLNESS PACK St. Michael’s Energizing Body & Mind Wellness Pack includes four 10 ml roll on of essential oil blends re-energize your wellness .
 
-Ingredients
+             
 
-Grape Seed Oil
-Lavender: Tense breathing, muscle spasms, muscle aches, headaches, itching, stress, nervous tension, anxiety, nervous exhaustion, mood swings, anger,
-Eucalyptus, Globulus: Infections, respiratory congestion, sore throats, fevers, immune support.
-Peppermint: Infections, respiratory congestion, fevers, muscle aches, lymphatic support, immune support.
-Tea Tree: Infections, respiratory congestion, immune support sleeplessness.
-HOW TO USE: For external use only. For adults, we suggest applying to wrists, neck, below the ears or other pulse and acupressure points as needed. You may re-apply during the day up to 4 times. Avoid applying near the ears, eyes, mouth, or any mucus membrane. If oil gets on your fingers, wash thoroughly with soap and water.
+            • Change -Calming. Balancing. Rejuvenating. Brings mind stillness in midst of change. Balances the moods. (Blend contains: Bergamot, Black Spruce, Frankincense, Geranium, Vetiver, Lemon, Lavender, Myrrh, Rose, Sandalwood)
+            • Energizing -Energize the senses. Revitalize the body. Renew your motivation to be more productive and enthusiastic to get through the day. Mood enhancer. (Blend contains: Lavender Lemongrass, Cinnamon, Orange Sweet, Peppermint)
+            • Immune Booster – Supports the immune and lymphatic systems. Great for fatigue immune support and adrenal support. (Blend contains: Eucalyptus, Lemon, Peppermint, Oregano, Tea Tree, Clove, Ylang Ylang)
+            • Uplifting– Gently uplifts, balances, and refreshes the emotions, while promoting a sense of well-being. Works for stress, tension, mild depression, fear, panic, lack of sense of well-being. (Blend contains: Bergamot, Lemon, Rose, Lime, Ylang Ylang, Peppermint, Frankincense)
 
-These products are not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products. Keep out of the reach of children.  Always consult a qualified aromatherapist before using essential oils with babies and children.
+             
 
-Aromatherapy: The use of natural, aromatic substances, known as essential oils, to enhance the well-being of body, mind, and spirit. (This statement has not been evaluated by the FDA. No information provided is intended to diagnose, treat, cure or prevent any disease.
-"""
-                     , image: "cold_sinus", header: "Cold & Sinus", category: "Wellness Essential Oil Blends", price: "$12.99"),
-        
+            Top Quality Assured Products
+
+            St. Michael & Company Wellness Oil Blend Roll-Ons are a convenient and easy way to enjoy essential oils.  Carefully selected from ISO certified sources worldwide, these oil blends are safe, pleasant, organic, 100% pure and of the highest quality.  Essential oils are concentrated and potent, so certain precautions should be taken. Store essential oils at steady room temperature away from the bright sunlight. Please visit our website to see our full line of essential oil single notes, blends, and other aromatherapy products.
+
+             
+
+            Methods of Use
+
+            Roll-ons are easy to use. Unscrew the cap, tip the bottle, and roll the blend directly on your skin. Keep Roll-on next to your bed or computer, in your bathroom, kitchen or car, tucked into your office desk drawer or purse. Enjoy the benefits of aromatherapy everywhere you go!
+
+             
+
+             
+
+            This information is not intended to diagnose, treat, cure or prevent any disease. Essential oils are for external use and not for ingestion. These products are not intended to diagnose, treat, cure or prevent any disease. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using these products.
+            """
+                         , image: "energizing", header: "Energizing Mind and Body Wellness Pack", category: "Wellness Essential Oil Blend Kit", price: "$39.99"),
+            
         ]
      return list
     }
