@@ -89,6 +89,8 @@ extension SearchViewController: UISearchBarDelegate{
     
 }
 
+// MARK: - SearchResultsUpdating Extension
+
 extension SearchViewController: UISearchResultsUpdating{
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
@@ -99,6 +101,8 @@ extension SearchViewController: UISearchResultsUpdating{
     
     
 }
+
+// MARK: - SearchVC TableView Delegate and DataSource Extension
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 

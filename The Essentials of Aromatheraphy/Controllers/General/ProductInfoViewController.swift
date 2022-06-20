@@ -5,7 +5,6 @@
 //  Created by Mutlu Çalkan on 16.03.2022.
 //
 import UIKit
-import CoreData
 
 class ProductInfoViewController: UIViewController {
     
@@ -37,7 +36,7 @@ class ProductInfoViewController: UIViewController {
     
     let productImage : UIImageView = {
         let image = UIImageView()
-        image.contentMode = .scaleAspectFill
+        image.contentMode = .scaleToFill
         image.image = UIImage(named: "product")
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
