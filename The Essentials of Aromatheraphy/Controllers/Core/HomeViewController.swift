@@ -53,6 +53,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         homeFeedLabel.frame = view.bounds
     }
 
+    
+    //MARK: - TableView Settings
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
