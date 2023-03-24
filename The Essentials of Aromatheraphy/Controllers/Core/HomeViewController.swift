@@ -18,6 +18,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return table
     }()
 
+    // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -46,7 +47,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
 
-
+    //MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         homeFeedLabel.frame = view.bounds
